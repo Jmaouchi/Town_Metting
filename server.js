@@ -1,6 +1,7 @@
 const express = require('express');
-// const sequelize = require('sequelize')
+const sequelize = require('./config/connection')
 const path = require('path')
+const routes = require ('./controllers/index')
 
 
 const app = express();
@@ -12,9 +13,14 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/', (req,res) => {
-  console.log('sup');
-})
 
 
-app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+
+// use all routes from the controllers folder
+
+app.use(routes);
+
+// sequelize will create the tables for us behind the scenes scenes
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
