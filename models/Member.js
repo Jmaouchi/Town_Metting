@@ -16,13 +16,20 @@ Member.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    lasttName: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false
     },
     dateOfBirth: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    family_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'families',
+        key: 'id'
+      }
     }
   },
   {

@@ -4,7 +4,7 @@ const {User, Families, Member} = require("../../models");
 
 
 router.get('/', (req,res) => {
-  Families.findAll({})
+  Member.findAll({})
   .then(dbUserData => {
     if (!dbUserData) {
       res.status(404).json({ message: 'No user found with this id' });
@@ -20,17 +20,11 @@ router.get('/', (req,res) => {
 
 
 router.get('/:id', (req, res) => { 
-  Families.findOne({
-    where: {
-      id: req.params.id
-    },
+  Member.findOne({
     attributes: ['id', 'familyName'],
-      include: [
-        {
-          model: Member, 
-          attributes: ['id']
-        }
-      ]
+      where: {
+        id: req.params.id
+      }
     })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -49,8 +43,11 @@ router.get('/:id', (req, res) => {
 
 // post a family 
 router.post('/', (req,res) => {
-  Families.create({
-    familyName: req.body.familyName
+  Member.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    dateOfBirth: req.body.dateOfBirth,
+    family_id: req.body.family_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
