@@ -12,8 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
+// setup handlebars later 
 
 
 // use all routes from the controllers folder
