@@ -1,10 +1,17 @@
 const router = require('express').Router();
-const {User, Families, Member} = require("../../models");
+const {Member, Families} = require("../../models");
 
 
-
+// get all memebers
 router.get('/', (req,res) => {
-  Member.findAll({})
+  Member.findAll({
+    include: [
+      {
+        model: Families, 
+        attributes: ['familyName']
+      }
+    ]
+  })
   .then(dbUserData => {
     if (!dbUserData) {
       res.status(404).json({ message: 'No user found with this id' });
@@ -19,12 +26,19 @@ router.get('/', (req,res) => {
 });
 
 
+// get one member
 router.get('/:id', (req, res) => { 
   Member.findOne({
-    attributes: ['id', 'familyName'],
+    attributes: ['id', 'firstName', 'lastName', 'dateOfBirth'],
       where: {
         id: req.params.id
-      }
+      },
+      include: [
+        {
+          model: Families, 
+          attributes: ['familyName']
+        }
+      ]
     })
     .then(dbUserData => {
       if (!dbUserData) {
@@ -41,7 +55,7 @@ router.get('/:id', (req, res) => {
 
 
 
-// post a family 
+// post a member
 router.post('/', (req,res) => {
   Member.create({
     firstName: req.body.firstName,
@@ -54,6 +68,40 @@ router.post('/', (req,res) => {
       console.log(err);
       res.status(500).json(err);
     });
+})
+
+
+
+
+// delete a Member
+router.delete('/:id', (req,res) => {
+  Member.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbMemberData => res.json(dbMemberData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
+
+// update a member
+router.put('/:id', (req,res) => {
+  Member.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbMemberData => res.json(dbMemberData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 })
 
 

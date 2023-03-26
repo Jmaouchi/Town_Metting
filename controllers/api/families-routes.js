@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {User, Families, Member} = require("../../models");
 
 
-
+// get all
 router.get('/', (req,res) => {
   Families.findAll({
     include: [
@@ -26,6 +26,7 @@ router.get('/', (req,res) => {
 });
 
 
+// get a single one
 router.get('/:id', (req, res) => { 
   Families.findOne({
     where: {
@@ -59,7 +60,7 @@ router.post('/', (req,res) => {
   Families.create({
     familyName: req.body.familyName
   })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbFamilyData => res.json(dbFamilyData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -74,7 +75,28 @@ router.delete('/:id', (req,res) => {
       id: req.params.id
     }
   })
-  .then(dbPostData => res.json(dbPostData))
+  .then(dbFamilyData => res.json(dbFamilyData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
+
+// update a family
+router.put('/:id', (req,res) => {
+  Families.update(
+    {
+      familyName: req.body.familyName
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(dbFamilyData => res.json(dbFamilyData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
