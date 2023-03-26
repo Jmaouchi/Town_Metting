@@ -4,7 +4,14 @@ const {User, Families, Member} = require("../../models");
 
 
 router.get('/', (req,res) => {
-  Families.findAll({})
+  Families.findAll({
+    include: [
+      {
+        model: Member, 
+        attributes: ['id','firstName','lastName','dateOfBirth', 'created_at']
+      }
+    ]
+  })
   .then(dbUserData => {
     if (!dbUserData) {
       res.status(404).json({ message: 'No user found with this id' });
@@ -28,13 +35,13 @@ router.get('/:id', (req, res) => {
       include: [
         {
           model: Member, 
-          attributes: ['id']
+          attributes: ['id', 'created_at']
         }
       ]
     })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'No family found with this id' });
         return;
       }
       res.json(dbUserData);
