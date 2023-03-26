@@ -9,7 +9,7 @@ Member.belongsTo(Families, {
 
 // create associations
 Families.hasMany(Member, {
-  foreignKey: 'family_id'
+  foreignKey: 'family_id',
 });
 
 module.exports = { User, Families, Member};

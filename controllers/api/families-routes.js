@@ -67,4 +67,18 @@ router.post('/', (req,res) => {
 })
 
 
+// delete a family 
+router.delete('/:id', (req,res) => {
+  Families.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbPostData => res.json(dbPostData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
 module.exports = router;

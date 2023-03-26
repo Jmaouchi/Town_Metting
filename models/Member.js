@@ -29,7 +29,8 @@ Member.init(
       references: {
         model: 'families',
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   },
   {
