@@ -1,7 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/connection')
 const path = require('path')
-const routes = require ('./controllers/index')
+const routes = require ('./controllers')
 
 
 const app = express();
@@ -13,7 +13,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // setup handlebars later 
+// set up Handlebars.js as your app's template engine
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // use all routes from the controllers folder
 

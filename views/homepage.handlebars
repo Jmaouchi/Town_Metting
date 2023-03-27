@@ -1,3 +1,11 @@
-<div>
-  <h1>Hello Im the homePage that will display the loggin and signup</h1>
-</div>
+ {{!-- displya all the post data  --}}
+<ol class="post-list">
+  {{!-- You need to add this to be able to display all the data, this is a foreach loop --}}
+  {{#each familyData as |data|}}
+  <li>
+    {{!-- get the partial from post-info.handlebars file --}}
+    {{!-- the > here will search for a partial, then the post-info is the name of the partial, final the post is the post data from post a post route  --}}
+    {{> post-info data }}
+  </li>
+  {{/each}}
+</ol>
