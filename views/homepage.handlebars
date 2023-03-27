@@ -1,11 +1,16 @@
- {{!-- displya all the post data  --}}
-<ol class="post-list">
-  {{!-- You need to add this to be able to display all the data, this is a foreach loop --}}
-  {{#each familyData as |data|}}
-  <li>
-    {{!-- get the partial from post-info.handlebars file --}}
-    {{!-- the > here will search for a partial, then the post-info is the name of the partial, final the post is the post data from post a post route  --}}
-    {{> post-info data }}
-  </li>
-  {{/each}}
-</ol>
+<div class="main-div">
+  {{> addFamilyOverlay}}
+
+  {{!-- displya all the post data  --}}
+  <div class="row">
+    {{!-- You need to add this to be able to display all the data, this is a foreach loop --}}
+    {{#each familyData as |data|}}
+    <div class="col col-lg-3 col-md-2 family_boxes">
+      {{!-- get the partial from post-info.handlebars file --}}
+      {{!-- the > here will search for a partial, then the post-info is the name of the partial, final the post is the post data from post a post route  --}}
+      {{> family-info data }}
+    </div>
+    {{/each}}
+  </div>
+</div>
+

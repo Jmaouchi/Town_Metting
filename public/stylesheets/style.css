@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.family_boxes{
+  background-color: blue;
+  border: 1px solid whitesmoke;
+}
+
+
+.main-div{
+  position: relative;
+}
+
+.model-overlay{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding: 100px;
+  width: 300px;
+  background-color: whitesmoke;
+  display: none;
+}

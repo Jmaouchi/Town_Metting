@@ -1,0 +1,18 @@
+<div class="">
+  <div class="">
+    <h1>{{familyName}}</h1>
+    <span>This family has {{members.length}} members</span>
+    <button class="show-family-members" data-id="{{id}}">See Members</button>
+    <div class="family-option">
+      <button class="Add-family" data-id="{{id}}">Delete</button>
+      <button class="edit-family" data-id="{{id}}">Edit</button>
+    </div>
+    {{#each members}}
+    <div>
+      <p>{{this.lastName}}</p>
+      <p>{{this.firstName}}</p>
+      <p>{{this.dateOfBirth}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
