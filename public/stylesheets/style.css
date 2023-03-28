@@ -4,11 +4,21 @@
   box-sizing: border-box;
 }
 
+.main{
+  min-height: 100vh;
+  background-color: black;
+}
+.row{
+  min-height: 100vh;
+}
 
 
 .family_boxes{
-  background-color: blue;
-  border: 1px solid whitesmoke;
+  background-color: rgb(145, 145, 217);
+  border: 5px solid black;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
 }
 
 
@@ -22,6 +32,6 @@
   left: 40%;
   padding: 100px;
   width: 300px;
-  background-color: whitesmoke;
+  background-color: rgb(12, 12, 12);
   display: none;
 }
