@@ -1,4 +1,5 @@
 const createFamilyName = document.querySelector('.main-row');
+const editInput = document.querySelector('.add-familyName-input');
 
 
 // delete row or update name in a row 
@@ -15,7 +16,8 @@ function handleEvent(event){
     if(e==="delete-family"){
       deleteFamily(datasetId.id)
     }else if(e==="edit-family"){
-      alert('edit')
+      editInput.dataset.id = datasetId.id;
+      editFamily(datasetId.id)
     }
 }
 
@@ -31,5 +33,25 @@ function deleteFamily(id){
   });
 }
 
+
+function editFamily(id){
+
+
+    fetch(`http://localhost:3001/api/family/update/` + id,{
+      method:'PUT',
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        id: editInput.dataset,
+        familyName: editInput.value
+        
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+        
+    });
+}
 
 createFamilyName.addEventListener("click", handleEvent)

@@ -85,7 +85,7 @@ router.delete('/:id', (req,res) => {
 
 
 // update a family
-router.put('/:id', (req,res) => {
+router.put('/update/:id', (req,res) => {
   Families.update(
     {
       familyName: req.body.familyName

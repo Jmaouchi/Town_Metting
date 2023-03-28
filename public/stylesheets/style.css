@@ -35,3 +35,14 @@
   background-color: rgb(12, 12, 12);
   display: none;
 }
+
+
+.add-family-container{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  padding: 100px;
+  width: 300px;
+  background-color: rgb(185, 32, 32);
+  /* display: none; */
+}
