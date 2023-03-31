@@ -1,5 +1,6 @@
 const createFamilyName = document.querySelector('.main-row');
 const editInput = document.querySelector('.add-familyName-input');
+const mainHomepageDiv = document.querySelector('.main-homepage-div');
 
 
 // delete row or update name in a row 
@@ -16,10 +17,11 @@ function handleEvent(event){
     if(e==="delete-family"){
       deleteFamily(datasetId.id)
     }else if(e==="edit-family"){
-      editInput.dataset.id = datasetId.id;
-      editFamily(datasetId.id)
+      // show model to be able to edit the family name
+      hundleEditFamily(datasetId.id)
     }
 }
+
 
 
 function deleteFamily(id){
@@ -34,24 +36,71 @@ function deleteFamily(id){
 }
 
 
-function editFamily(id){
+// Edit an existing family
+function hundleEditFamily(id){
+  // create a div 
+  const addDiv = document.createElement('div');
+  addDiv.className = 'add-family-container'
+  addDiv.dataset.id = id;
+  // create an input field 
+  const addInput = document.createElement('input');
+  addInput.className = 'add-family-input';
+  addInput.dataset.id = id;
+  // append the input field to the div
+  addDiv.appendChild(addInput);
+  // create a button
+  const saveBtn = document.createElement("button");
+  saveBtn.className = "btn btn-primary save-change-btn"
+  saveBtn.textContent = "Save"
+  saveBtn.dataset.id = id;
+  // append the button to the div
+  addDiv.appendChild(saveBtn)
 
+  // append everything to the mainHomepageDiv
+  mainHomepageDiv.appendChild(addDiv);
 
-    fetch(`http://localhost:3001/api/family/update/` + id,{
-      method:'PUT',
-      headers:{
-        "Content-Type" : "application/json"
-      },
-      body: JSON.stringify({
-        id: editInput.dataset,
-        familyName: editInput.value
-        
+  // Update the data when we click on the save button that we created earlier
+  document.querySelector('.add-family-container').addEventListener('click', function() {
+    event.preventDefault();
+    const e = event.target.className;
+    console.log(e);
+    if(e==='btn btn-primary save-change-btn'){
+      fetch(`http://localhost:3001/api/family/update/` + id,{
+        method:'PUT',
+        headers:{
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+          id: addInput.dataset.id,
+          familyName: addInput.value
+          
+        })
       })
-    })
-    .then(response => response.json())
-    .then(data => {
-        
-    });
+      .then(response => response.json())
+      .then(data => {
+        // realod the page, but here we can do another api call a ( GET all ) and display the data on a DOMloadContent
+        window.location.reload();
+      });
+    }
+  })
 }
 
+
+// function loadData(){
+//   fetch('http://localhost:3001/api/family/'{
+//         method:'GET',
+//         headers:{
+//           "Content-Type" : "application/json"
+//         }
+//       })
+//       .then(response => response.json())
+//       .then(data => {
+//         // realod the page, but here we can do another api call to fetch the data again a
+//         window.location.reload();
+//       });
+
+// }
+
+
+// window.addEventListener('DOMContentLoaded', loadData)
 createFamilyName.addEventListener("click", handleEvent)

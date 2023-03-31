@@ -22,7 +22,7 @@
 }
 
 
-.main-div{
+.main-homepage-div{
   position: relative;
 }
 
@@ -45,4 +45,10 @@
   width: 300px;
   background-color: rgb(185, 32, 32);
   /* display: none; */
+}
+
+
+.save-btn{
+  background-color: blue;
+  width: 50px;
 }
