@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
       include: [
         {
           model: Member, 
-          attributes: ['id', 'created_at']
+          attributes: ['id','firstName','lastName','dateOfBirth', 'created_at']
         }
       ]
     })

@@ -1,6 +1,7 @@
 const createFamilyName = document.querySelector('.main-row');
 const editInput = document.querySelector('.add-familyName-input');
 const mainHomepageDiv = document.querySelector('.main-homepage-div');
+const showMembers = document.querySelector('.show-family-members')
 
 
 // delete row or update name in a row 
@@ -19,9 +20,10 @@ function handleEvent(event){
     }else if(e==="edit-family"){
       // show model to be able to edit the family name
       hundleEditFamily(datasetId.id)
+    }else if(e==="show-family-members"){
+      showFamilyMembers(datasetId.id)
     }
 }
-
 
 
 function deleteFamily(id){
@@ -102,5 +104,11 @@ function hundleEditFamily(id){
 // }
 
 
+function showFamilyMembers(id){
+  
+}
+
+
 // window.addEventListener('DOMContentLoaded', loadData)
 createFamilyName.addEventListener("click", handleEvent)
+showMembers.addEventListener('click', showFamilyMembers)

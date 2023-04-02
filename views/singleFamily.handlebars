@@ -1,0 +1,12 @@
+<div>
+  {{#each singleFamilyData.members}}
+  <p style="color: white;">{{this.firstName}}</p>
+  <p style="color: white;">{{this.lastName}}</p>
+  <p style="color: white;">{{this.dateOfBirth}}</p>
+
+  <div>
+    <button class="delete-member" data-id="{{id}}">Edit</button>
+    <button class="edit-member" data-id="{{id}}">Delete</button>
+  </div>
+  {{/each}}
+</div>
