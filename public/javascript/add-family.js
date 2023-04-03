@@ -9,15 +9,18 @@ const submitFamily = document.querySelector('.submit-family');
 const modelDiv = document.querySelector('.model-overlay');
 const addModel = document.querySelector('.add-model')
 
+
+// Function that will show the model overlay after we click on the add family button
 function showModel(){
   modelDiv.hidden = false;
 }
 
 
-async function commentFormHandler(event) {
+// function that will handle the post request. (to add the family name into the database)
+async function familyFormHandler(event) {
   event.preventDefault();
 
-  // make sure that this const is on the inside of the finction
+  // make sure that this const is inside the familyFormHandler function
   const familyName = document.querySelector('.family-name-input').value.trim()
 
   if(familyName){
@@ -32,15 +35,16 @@ async function commentFormHandler(event) {
     });
 
     if (response.ok) {
+      // Reload the page and hide the Model Overlay
       document.location.reload();
+      modelDiv.hidden = true;
     } else {
       alert(response.statusText);
     }
   }else{
-    alert('oooooo')
+    alert('Name cant be empty')
   }
-
 }
 
-submitFamily.addEventListener('click', commentFormHandler);
+submitFamily.addEventListener('click', familyFormHandler);
 addModel.addEventListener('click', showModel)
