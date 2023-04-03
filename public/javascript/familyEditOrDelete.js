@@ -105,7 +105,8 @@ function hundleEditFamily(id){
 
 
 function showFamilyMembers(id){
-  
+  // After you click on the see members button, it will take you to see all the data of members of that family
+  window.location.assign(`http://localhost:3001/family/${id}`)
 }
 
 
