@@ -8,12 +8,14 @@
     <p style="color: white;">{{this.dateOfBirth}}</p>
 
     <div>
-      <button class="delete-member" data-id="{{id}}">Edit</button>
-      <button class="edit-member" data-id="{{id}}">Delete</button>
+      <button class="delete-member btn btn-primary" data-id="{{id}}">Edit</button>
+      <button class="edit-member btn btn-primary" data-id="{{id}}">Delete</button>
     </div>
     {{/each}}
   {{!-- if not, then show this message --}}
   {{else}}
     <div style="color:white">No Memberes Yet</div>
   {{/if}}
+
+  <button class="btn btn-primary">Add a member</button>
 </div>

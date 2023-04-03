@@ -15,9 +15,9 @@ function handleEvent(event){
   // get the id out of the clicked element, so we can send a request to the backend, and be able to delete the item 
   const datasetId = event.target.dataset;
 
-    if(e==="delete-family"){
+    if(e==="delete-family btn btn-primary"){
       deleteFamily(datasetId.id)
-    }else if(e==="edit-family"){
+    }else if(e==="edit-family btn btn-primary"){
       // show model to be able to edit the family name
       hundleEditFamily(datasetId.id)
     }else if(e==="show-family-members"){
