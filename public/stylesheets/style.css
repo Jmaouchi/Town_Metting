@@ -27,13 +27,26 @@
 }
 
 .model-overlay{
+  border-radius: 25px;
   position: absolute;
   top: 40%;
   left: 40%;
-  padding: 100px;
+  padding: 80px;
   width: 300px;
-  background-color: rgb(12, 12, 12);
-  display: none;
+  background-color: rgb(96, 93, 93);
+  /* display: none; */
+}
+
+.add-family-heading{
+  font-size: 17px;
+}
+
+.model-save-input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
 
 

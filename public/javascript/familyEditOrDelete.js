@@ -27,7 +27,7 @@ function handleEvent(event){
 
 
 function deleteFamily(id){
-  fetch('http://localhost:3001/api/family/' + id,{
+  fetch('/api/family/' + id,{
     method: 'DELETE'
   })
   .then(response => response.json())
@@ -67,7 +67,7 @@ function hundleEditFamily(id){
     const e = event.target.className;
     console.log(e);
     if(e==='btn btn-primary save-change-btn'){
-      fetch(`http://localhost:3001/api/family/update/` + id,{
+      fetch(`/api/family/update/` + id,{
         method:'PUT',
         headers:{
           "Content-Type" : "application/json"
@@ -89,7 +89,7 @@ function hundleEditFamily(id){
 
 
 // function loadData(){
-//   fetch('http://localhost:3001/api/family/'{
+//   fetch('/api/family/'{
 //         method:'GET',
 //         headers:{
 //           "Content-Type" : "application/json"
@@ -106,7 +106,7 @@ function hundleEditFamily(id){
 
 function showFamilyMembers(id){
   // After you click on the see members button, it will take you to see all the data of members of that family
-  window.location.assign(`http://localhost:3001/family/${id}`)
+  window.location.assign(`/family/${id}`)
 }
 
 

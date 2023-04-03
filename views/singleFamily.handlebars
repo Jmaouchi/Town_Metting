@@ -1,12 +1,19 @@
 <div>
-  {{#each singleFamilyData.members}}
-  <p style="color: white;">{{this.firstName}}</p>
-  <p style="color: white;">{{this.lastName}}</p>
-  <p style="color: white;">{{this.dateOfBirth}}</p>
+  {{!-- If a family has members, then display them --}}
+  {{#if singleFamilyData.members}}
+    {{!-- loop over the data  --}}
+    {{#each singleFamilyData.members}}
+    <p style="color: white;">{{this.firstName}}</p>
+    <p style="color: white;">{{this.lastName}}</p>
+    <p style="color: white;">{{this.dateOfBirth}}</p>
 
-  <div>
-    <button class="delete-member" data-id="{{id}}">Edit</button>
-    <button class="edit-member" data-id="{{id}}">Delete</button>
-  </div>
-  {{/each}}
+    <div>
+      <button class="delete-member" data-id="{{id}}">Edit</button>
+      <button class="edit-member" data-id="{{id}}">Delete</button>
+    </div>
+    {{/each}}
+  {{!-- if not, then show this message --}}
+  {{else}}
+    <div style="color:white">No Memberes Yet</div>
+  {{/if}}
 </div>
