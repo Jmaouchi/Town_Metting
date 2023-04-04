@@ -33,7 +33,6 @@ async function familyFormHandler(event) {
         'Content-Type': 'application/json'
       }
     });
-
     if (response.ok) {
       // Reload the page and hide the Model Overlay
       document.location.reload();

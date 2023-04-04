@@ -17,5 +17,27 @@
     <div style="color:white">No Memberes Yet</div>
   {{/if}}
 
-  <button class="btn btn-primary">Add a member</button>
+
+  <div>
+    <form>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">First name</label>
+          <input type="text" class="form-control memberFirstName" id="validationDefault01" placeholder="First name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">Last name</label>
+          <input type="text" class="form-control memberLastName" id="validationDefault02" placeholder="Last name"  required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault03">Date Of Birth</label>
+          <input type="text" class="form-control memberDateOfBirth" id="validationDefault03" placeholder="Date Of Birth" required>
+        </div>
+      </div>
+      <button class="btn btn-primary add-member" type="submit">Submit form</button>
+    </form>
+  </div>
+  
 </div>
+
+<script src="/javascript/add-member.js"></script>
