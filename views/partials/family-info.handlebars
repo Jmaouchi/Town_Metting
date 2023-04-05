@@ -1,18 +1,15 @@
-<div class="">
-  <div class="">
-    <h1>{{familyName}}</h1>
-    <span>This family has {{members.length}} members</span>
-    <button class="show-family-members" data-id="{{id}}">See Members</button>
-    <div class="family-option">
-      <button class="delete-family btn btn-primary" data-id="{{id}}">Delete</button>
-      <button class="edit-family btn btn-primary" data-id="{{id}}">Edit</button>
-    </div>
-    {{!-- {{#each members}}
-    <div>
-      <p>{{this.lastName}}</p>
-      <p>{{this.firstName}}</p>
-      <p>{{this.dateOfBirth}}</p>
-    </div>
-    {{/each}} --}}
+<div class="card">
+  <div class="card-header">
+   <h4>{{familyName}}</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">This family has {{members.length}} members</h5>
+    <button class="show-family-members btn btn-secondary" data-id="{{id}}">See Members</button>
+    <p class="card-text">You can make some updates, to delete or edit this family name by clicking on these two buttons bellow.</p>
+    <button class="delete-family btn btn-primary" data-id="{{id}}">Delete</button>
+    <button class="edit-family btn btn-primary" data-id="{{id}}">Edit</button>
+  </div>
+  <div class="card-footer text-muted">
+    Family created {{created_at}}
   </div>
 </div>

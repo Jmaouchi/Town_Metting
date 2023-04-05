@@ -11,32 +11,31 @@
       <button class="delete-member btn btn-primary" data-id="{{id}}">Edit</button>
       <button class="edit-member btn btn-primary" data-id="{{id}}">Delete</button>
     </div>
+
+    <p class="card-text text-white" style="color: white;"><small class="text-muted">Created {{created_at}}</small></p>
     {{/each}}
   {{!-- if not, then show this message --}}
   {{else}}
     <div style="color:white">No Memberes Yet</div>
   {{/if}}
 
-
-  <div>
-    <form>
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="validationDefault01">First name</label>
-          <input type="text" class="form-control memberFirstName" id="validationDefault01" placeholder="First name" required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationDefault02">Last name</label>
-          <input type="text" class="form-control memberLastName" id="validationDefault02" placeholder="Last name"  required>
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationDefault03">Date Of Birth</label>
-          <input type="text" class="form-control memberDateOfBirth" id="validationDefault03" placeholder="Date Of Birth" required>
-        </div>
+  <form>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input type="text" class="form-control memberFirstName" id="validationDefault01" placeholder="First name" required>
       </div>
-      <button class="btn btn-primary add-member" type="submit">Submit form</button>
-    </form>
-  </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input type="text" class="form-control memberLastName" id="validationDefault02" placeholder="Last name"  required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault03">Date Of Birth</label>
+        <input type="text" class="form-control memberDateOfBirth" id="validationDefault03" placeholder="Date Of Birth" required>
+      </div>
+    </div>
+    <button class="btn btn-primary add-member" type="submit">Submit form</button>
+  </form>
   
 </div>
 

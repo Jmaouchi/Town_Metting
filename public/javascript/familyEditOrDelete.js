@@ -20,7 +20,7 @@ function handleEvent(event){
     }else if(e==="edit-family btn btn-primary"){
       // show model to be able to edit the family name
       hundleEditFamily(datasetId.id)
-    }else if(e==="show-family-members"){
+    }else if(e==="show-family-members btn btn-secondary"){
       showFamilyMembers(datasetId.id)
     }
 }

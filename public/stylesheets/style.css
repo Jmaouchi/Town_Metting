@@ -7,18 +7,14 @@
 .main{
   min-height: 100vh;
   background-color: black;
+  padding: 10px;
 }
 .row{
   min-height: 100vh;
 }
 
-
 .family_boxes{
-  background-color: rgb(145, 145, 217);
-  border: 5px solid black;
-  width: 100%;
-  height: 100%;
-  padding: 25px;
+  margin-bottom: 10px;
 }
 
 
@@ -28,13 +24,14 @@
 
 .model-overlay{
   border-radius: 25px;
-  position: absolute;
+  position: sticky;
   top: 40%;
   left: 40%;
   padding: 80px;
   width: 300px;
   background-color: rgb(96, 93, 93);
   /* display: none; */
+  z-index: 999;
 }
 
 .add-family-heading{
@@ -58,6 +55,7 @@
   width: 300px;
   background-color: rgb(185, 32, 32);
   /* display: none; */
+  z-index: 99999;
 }
 
 
