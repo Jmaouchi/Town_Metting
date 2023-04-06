@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+nav{
+  margin-bottom: 20px;
+}
+
 .main{
   min-height: 100vh;
   background-color: black;
@@ -48,18 +52,35 @@
 
 
 .add-family-container{
-  position: absolute;
+  border-radius: 25px;
+  position: sticky;
   top: 40%;
   left: 40%;
-  padding: 100px;
+  padding: 80px;
   width: 300px;
-  background-color: rgb(185, 32, 32);
+  background-color: rgb(192, 12, 12);
   /* display: none; */
-  z-index: 99999;
+  z-index: 999;
 }
 
 
 .save-btn{
   background-color: blue;
   width: 50px;
+}
+
+
+.form-content{
+  color: white;
+}
+
+.members{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.show-add-member-box{
+  margin-top: 20px;
 }

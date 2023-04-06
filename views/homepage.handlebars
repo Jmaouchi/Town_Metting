@@ -1,13 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">HomeTown</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/event">Events</a>
+      </li>
+      <li class="nav-item">
+        {{!-- you can able this when the user is an admin  --}}
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline navbar-collapse">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+{{> addFamilyOverlay}}
 <div class="main-homepage-div" id="main">
-  {{> addFamilyOverlay}}
-
-  {{!-- displya all the post data  --}}
+  {{!-- displya all the family data  --}}
   <div class="row main-row">
-    {{!-- You need to add this to be able to display all the data, this is a foreach loop --}}
     {{#each familyData as |data|}}
     <div class="col-sm col-lg-4 col-md-2 family_boxes">
-      {{!-- get the partial from post-info.handlebars file --}}
-      {{!-- the > here will search for a partial, then the post-info is the name of the partial, final the post is the post data from post a post route  --}}
       {{> family-info data }}
     </div>
     {{/each}}

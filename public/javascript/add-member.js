@@ -1,4 +1,5 @@
 const member = document.querySelector('.add-member');
+const showMemberBox = document.querySelector('.show-add-member-box');
 
 
 
@@ -32,5 +33,17 @@ async function addMember(event){
 }
 
 
+function showBox(){
+  // Get the form className, then show the form after we click on the add member button
+  const addForm = document.querySelector('.add-member-form')
+  // Get the add member button, then hide it after we show the form
+  const addBtn = document.querySelector('.show-add-member-box');
 
+  addForm.hidden = false;
+  addBtn.style.display = 'none'
+}
+
+
+
+showMemberBox.addEventListener('click', showBox)
 member.addEventListener('click', addMember)

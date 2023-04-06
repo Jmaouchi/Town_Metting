@@ -63,4 +63,20 @@ router.get('/family/:id', (req, res) => {
 });
 
 
+router.get('/event', (req,res) => {
+  Families.findAll({})
+  .then(dbUserData => {
+    const familyData = dbUserData.map(data => data.get({plain: true}));
+    console.log(familyData);
+    res.render('event', {
+      familyData
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
 module.exports = router;
