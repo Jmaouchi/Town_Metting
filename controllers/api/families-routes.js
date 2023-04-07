@@ -26,6 +26,34 @@ router.get('/', (req,res) => {
 });
 
 
+// find by familyName
+router.get('/:familyName', (req, res) => { 
+  Families.findOne({
+    where: {
+      familyName: req.params.familyName
+    },
+    attributes: ['id', 'familyName'],
+      include: [
+        {
+          model: Member, 
+          attributes: ['id','firstName','lastName','dateOfBirth', 'created_at']
+        }
+      ]
+    })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No family found with this name' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 // get a single one
 router.get('/:id', (req, res) => { 
   Families.findOne({
