@@ -1,15 +1,15 @@
 <div class="card" style="background-color: #e3f2fd;"> 
-  <div class="card-header">
-   <h4>{{familyName}}</h4>
+  <div class="card-header bg-primary">
+    <h4>{{familyName}}</h4>
   </div>
   <div class="card-body">
     <h5 class="card-title">This family has {{members.length}} members</h5>
-    <button class="show-family-members btn btn-secondary" data-id="{{id}}">See Members</button>
+    <button class="show-family-members btn btn-info" data-id="{{id}}">See Members</button>
     <p class="card-text">You can make some updates, to delete or edit this family name by clicking on these two buttons bellow.</p>
-    <button class="delete-family btn btn-primary" data-id="{{id}}">Delete</button>
-    <button class="edit-family btn btn-primary" data-id="{{id}}">Edit</button>
+    <button class="delete-family btn btn-danger" data-id="{{id}}">Delete</button>
+    <button class="edit-family btn btn-warning" data-id="{{id}}">Edit</button>
   </div>
-  <div class="card-footer text-muted">
-    Family created {{created_at}}
+  <div class="card-footer text-muted" style="font-style: italic;">
+    Tizi Guefres Family
   </div>
 </div>

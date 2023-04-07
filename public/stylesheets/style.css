@@ -6,13 +6,19 @@
 
 nav{
   margin-bottom: 20px;
+  color: white;
 }
 
 .main{
   min-height: 100vh;
-  background-color: black;
+  background-color: rgb(5, 11, 70);
   padding: 10px;
 }
+
+.add-model{
+  margin: 10px;
+}
+
 .row{
   min-height: 100vh;
 }
@@ -29,9 +35,10 @@ nav{
 .model-overlay{
   border-radius: 25px;
   position: sticky;
-  top: 40%;
+  top: 10%;
   left: 40%;
   padding: 80px;
+  margin-bottom: 15px;
   width: 300px;
   background-color: rgb(96, 93, 93);
   /* display: none; */
@@ -84,3 +91,5 @@ nav{
 .show-add-member-box{
   margin-top: 20px;
 }
+
+
