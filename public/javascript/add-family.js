@@ -35,7 +35,7 @@ async function familyFormHandler(event) {
     });
     if (response.ok) {
       // Reload the page and hide the Model Overlay
-      document.location.reload();
+      document.location.assign('/');
       modelDiv.hidden = true;
     } else {
       alert(response.statusText);

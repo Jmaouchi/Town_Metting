@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {User, Families, Member} = require("../../models");
 
 
-// get all
+// GET all data from Families table
 router.get('/', (req,res) => {
   Families.findAll({
     include: [
@@ -26,35 +26,7 @@ router.get('/', (req,res) => {
 });
 
 
-// find by familyName
-router.get('/:familyName', (req, res) => { 
-  Families.findOne({
-    where: {
-      familyName: req.params.familyName
-    },
-    attributes: ['id', 'familyName'],
-      include: [
-        {
-          model: Member, 
-          attributes: ['id','firstName','lastName','dateOfBirth', 'created_at']
-        }
-      ]
-    })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No family found with this name' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-
-// get a single one
+// GET a single family by id
 router.get('/:id', (req, res) => { 
   Families.findOne({
     where: {
@@ -82,8 +54,35 @@ router.get('/:id', (req, res) => {
 });
 
 
+// GET a single family by familyName
+router.get('/searchByFamilyName/:familyName', (req, res) => { 
+  Families.findOne({
+    where: {
+      familyName: req.params.familyName
+    },
+    attributes: ['id', 'familyName'],
+      include: [
+        {
+          model: Member, 
+          attributes: ['id','firstName','lastName','dateOfBirth', 'created_at']
+        }
+      ]
+    })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No family found with this name' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-// post a family 
+
+// POST a family 
 router.post('/', (req,res) => {
   Families.create({
     familyName: req.body.familyName
@@ -96,7 +95,7 @@ router.post('/', (req,res) => {
 })
 
 
-// delete a family 
+// dDELETE a family 
 router.delete('/:id', (req,res) => {
   Families.destroy({
     where: {
@@ -112,7 +111,7 @@ router.delete('/:id', (req,res) => {
 
 
 
-// update a family
+// UPDATE a family
 router.put('/update/:id', (req,res) => {
   Families.update(
     {
