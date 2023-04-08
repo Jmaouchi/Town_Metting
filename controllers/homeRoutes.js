@@ -80,7 +80,7 @@ router.get('/family/searchByFamilyName/:familyName', (req,res) => {
   .then(singleFamilyData => {
     console.log(singleFamilyData);
     if (!singleFamilyData) {
-      res.status(404).json({ message: 'No family found with this name' });
+      res.render('wrongName')
       return;
     }
     // serialize the data to get only whatever we data is needed
