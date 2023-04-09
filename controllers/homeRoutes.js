@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const {User, Families, Member} = require('../models')
+const {User, Families, Member, Commity} = require('../models')
 
 
 // GET all Families data
@@ -43,7 +43,7 @@ router.get('/family/:id', (req, res) => {
     })
     .then(singleFamily => {
       if (!singleFamily) {
-        res.status(404).json({ message: 'No family found with this id' });
+        res.status(404).json({ message: 'No famille avec ce nom'});
         return;
       }
       // serialize the data to get only whatever we data is needed
@@ -82,6 +82,8 @@ router.get('/family/searchByFamilyName/:familyName', (req,res) => {
     if (!singleFamilyData) {
       res.render('wrongName')
       return;
+    }else if(singleFamilyData === ""){
+      res.render('wrongName')
     }
     // serialize the data to get only whatever we data is needed
     const singleFamilyName  = singleFamilyData.get({ plain: true });
@@ -108,6 +110,23 @@ router.get('/event', (req,res) => {
     console.log(familyData);
     res.render('event', {
       familyData
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
+
+// GET all commity members
+router.get('/commity', (req,res) => {
+  Commity.findAll({})
+  .then(commity => {
+    const commityData = commity.map(data => data.get({plain: true}));
+    res.render('commityMembers', {
+      commityData
     })
   })
   .catch(err => {

@@ -92,12 +92,6 @@ nav{
   margin-top: 20px;
 }
 
-.navbar-little-icon{
-  background-color: red;
-  color: red;
-  border: 2px solid red;
-}
-
 .navbar-collapse{
   display: flex;
   align-items: center;

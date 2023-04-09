@@ -6,7 +6,13 @@ const navbar = document.querySelector('.navbar-collapse')
 async function getFamily(event){
   event.preventDefault()
   const familyName = document.querySelector('#search-family-input').value.trim();
-   window.location.assign(`/family/searchByFamilyName/${familyName}`)
+  if(familyName){
+    window.location.assign(`/family/searchByFamilyName/${familyName}`)
+  }else{
+    alert('Name need to be added');
+    // Or you fake the familyName, and this will redirect them into the wrongName page :) =>
+    // window.location.assign('/family/searchByFamilyName/4654sdad654')
+  }
 }
 
 
