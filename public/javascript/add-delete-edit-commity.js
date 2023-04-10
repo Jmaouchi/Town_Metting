@@ -1,5 +1,8 @@
-const commityBtn = document.querySelector('.commity-submit-btn')
-const deleteCommity = document.querySelector('.commity-member')
+const commityBtn = document.querySelector('.commity-submit-btn');
+const deleteCommity = document.querySelector('.commity-member');
+const committeeBox = document.querySelector('.btn-show-hidden-box');
+const hiddenBox = document.querySelector('.add-commity');
+const closeHiddenBox = document.querySelector('.close-box')
 
 
 async function addCommity(event){
@@ -55,6 +58,21 @@ async function deleteCommityMember(event){
   }
 }
 
+// show hidden box, (when you can add a commitee member)
+showHiddenBox = () => {
+  hiddenBox.hidden = false;
+}
+
+// hide box after you click on the close button
+hideBox = () => {
+  hiddenBox.hidden = true;
+}
+
+
+
+
 
 deleteCommity.addEventListener('click', deleteCommityMember)
 commityBtn.addEventListener('click', addCommity)
+committeeBox.addEventListener('click', showHiddenBox)
+closeHiddenBox.addEventListener('click', hideBox)
