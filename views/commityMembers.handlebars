@@ -1,3 +1,61 @@
-<div class="commity-member" style="background-color: white; color:black">
-  Members Here
+<div class="my-commity">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">Tizi Logo</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Back Home</span></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link events" href="/commity">Commity</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link events" href="/event">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="commity-member">
+    {{#each commityData}}
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">{{firstName}}</div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">{{lastName}}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <P>Born{{dateOfBirth}}</P>
+        <div style="padding: 10px;">
+          <button class="delete-member btn btn-danger" data-id="{{id}}">Delete</button>
+          <button class="delete-member btn btn-warning" data-id="{{id}}">Edit</button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="add-commity">
+    <form>
+      <div class="form-row">
+        <div class="col input-field">
+          <input type="text" class="form-control commityFirstName" placeholder="First name">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control commityLastName" placeholder="Last name">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control commityDateOfBirth" placeholder="Date of birth">
+        </div>
+        <div class="col-auto input-field">
+          <button type="submit" class="btn btn-primary mb-2 commity-submit-btn">Submit</button>
+        </div>
+      </div>
+    </form>
+  <div>
 </div>
+
+
+<script src="/javascript/add-commity.js"></script>

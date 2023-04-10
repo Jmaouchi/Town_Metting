@@ -101,3 +101,38 @@ nav{
 .close{
   margin: 15px;
 }
+
+
+.commity-member {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.my-commity{
+  position: relative;
+}
+
+.add-commity{
+  background-color: rgb(40, 6, 175);
+  color: aliceblue;
+  position:absolute;
+  top: 40%;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 30%; */
+  padding: 25px;
+  min-height: 30vh;
+  border-radius: 20%;
+}
+
+
+.input-field{
+  margin: 10px;
+}

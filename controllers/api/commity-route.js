@@ -19,4 +19,18 @@ router.get('/', (req,res) => {
 });
 
 
+router.post('/', (req,res) => {
+  Commity.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    dateOfBirth: req.body.dateOfBirth,
+  })
+  .then(dbCommityData => res.json(dbCommityData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
 module.exports = router;
