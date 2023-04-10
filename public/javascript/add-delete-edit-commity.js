@@ -53,8 +53,6 @@ async function deleteCommityMember(event){
       // you can also use another fetch request to fetch all the data again instead of using a reload.
         window.location.reload();
     });
-  }else{
-    alert('no')
   }
 }
 
