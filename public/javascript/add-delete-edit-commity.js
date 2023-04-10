@@ -1,10 +1,11 @@
 const commityBtn = document.querySelector('.commity-submit-btn')
+const deleteCommity = document.querySelector('.commity-member')
 
 
 async function addCommity(event){
   event.preventDefault();
 
-
+  // get the input values
   const firstName = document.querySelector('.commityFirstName').value.trim();
   const lastName = document.querySelector('.commityLastName').value.trim();
   const dateOfBirth = document.querySelector('.commityDateOfBirth').value.trim();
@@ -28,11 +29,32 @@ async function addCommity(event){
       alert(response.statusText);
     }
   }else{
-    alert('no')
+    alert('Somethig is missing!!')
   }
-
 }
 
 
 
+async function deleteCommityMember(event){
+  // Get the className of the clicked element
+  const e = event.target.className;
+  // Get the datasetIf of the clicked element
+  const datasetId = event.target.dataset;
+
+  if(e==="delete-commity-member btn btn-danger"){
+    fetch('/api/commity/' + datasetId.id,{
+      method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+      // you can also use another fetch request to fetch all the data again instead of using a reload.
+        window.location.reload();
+    });
+  }else{
+    alert('no')
+  }
+}
+
+
+deleteCommity.addEventListener('click', deleteCommityMember)
 commityBtn.addEventListener('click', addCommity)

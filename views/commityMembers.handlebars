@@ -22,15 +22,14 @@
 
   <div class="commity-member">
     {{#each commityData}}
-    <div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card border-dark mb-3 commity-member-content" style="max-width: 18rem;">
       <div class="card-header">{{firstName}}</div>
       <div class="card-body text-dark">
         <h5 class="card-title">{{lastName}}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <P>Born{{dateOfBirth}}</P>
         <div style="padding: 10px;">
-          <button class="delete-member btn btn-danger" data-id="{{id}}">Delete</button>
-          <button class="delete-member btn btn-warning" data-id="{{id}}">Edit</button>
+          <button class="delete-commity-member btn btn-danger" data-id="{{id}}">Delete</button>
         </div>
       </div>
     </div>
@@ -58,4 +57,4 @@
 </div>
 
 
-<script src="/javascript/add-commity.js"></script>
+<script src="/javascript/add-delete-edit-commity.js"></script>
