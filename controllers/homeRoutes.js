@@ -108,7 +108,7 @@ router.get('/event', (req,res) => {
   .then(dbUserData => {
     const familyData = dbUserData.map(data => data.get({plain: true}));
     console.log(familyData);
-    res.render('event', {
+    res.render('login', {
       familyData
     })
   })

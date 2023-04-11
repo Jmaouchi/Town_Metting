@@ -9,6 +9,7 @@ nav{
   color: white;
 }
 
+
 .main{
   min-height: 100vh;
   background-color: rgb(5, 11, 70);
@@ -137,28 +138,78 @@ nav{
   margin: 10px;
 }
 
-.wrong-way-div{
+.page-wrap {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wrong-way-content{
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(43, 45, 155);
   color: white;
-  width: 60vh;
-  height: 300px;
-  box-shadow: 5px 15px 20px rgb(78, 75, 75);
 }
 
-.wrong-way-content h1{
+.header{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-top: 3px solid #28a745;
+  background: #495057;
+  color: #fff;
+  padding: 1%;
+}
+
+.header-left i{
+  margin-left: 5%;
+}
+
+.header-right h4{
+  text-align: right;
+  margin-right: 10%;
+  line-height: 2; 
+}
+
+.content{
+  background: #28a745;
+  width: 70%;
+  border-radius: 15px;
+}
+
+.content .form-content{
+  padding:10%;
+}
+
+.content .form-content .input-group .input-group-text{
+  background:#333;
+  color:#fff;
+  border:none;
+  border-radius:0;
+  font-weight: 600;
+}
+
+.content .form-content .input-group input{
+  border-radius: 0;
+}
+
+.content .form-content .input-group input:focus{
+  border-color: transparent;
+}
+
+.content .form-content h4{
+  margin-bottom:5%;
+}
+
+.content .form-content button{
+  background: #333;
+  color: #fff;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.login-page{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top:15px;
+}
+
+
+.fa-canadian-maple-leaf{
+  color: #28a745;
 }
