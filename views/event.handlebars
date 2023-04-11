@@ -1,8 +1,11 @@
 
 <div class="container">
+  {{#each eventData}}
   <div class="row">
     <div class="col-sm">
-      <h1>No events</h1>
+      <h1 style="color:white">{{eventName}}</h1>
+      <h1 style="color:white">{{eventAdress}}</h1>  
     </div>
   </div>
+  {{/each}}
 </div>

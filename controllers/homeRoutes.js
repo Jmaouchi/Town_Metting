@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const {User, Families, Member, Commity} = require('../models')
+const {User, Families, Member, Commity, TownEvents} = require('../models')
 
 
 // GET all Families data
@@ -102,14 +102,13 @@ router.get('/family/searchByFamilyName/:familyName', (req,res) => {
 })
 
 
-// GET all events
-router.get('/event', (req,res) => {
-  Families.findAll({})
-  .then(dbUserData => {
-    const familyData = dbUserData.map(data => data.get({plain: true}));
-    console.log(familyData);
-    res.render('login', {
-      familyData
+// GET all commity members
+router.get('/commity', (req,res) => {
+  Commity.findAll({})
+  .then(commity => {
+    const commityData = commity.map(data => data.get({plain: true}));
+    res.render('commityMembers', {
+      commityData
     })
   })
   .catch(err => {
@@ -119,14 +118,13 @@ router.get('/event', (req,res) => {
 })
 
 
-
-// GET all commity members
-router.get('/commity', (req,res) => {
-  Commity.findAll({})
-  .then(commity => {
-    const commityData = commity.map(data => data.get({plain: true}));
-    res.render('commityMembers', {
-      commityData
+// GET all Events
+router.get('/event', (req,res) => {
+  TownEvents.findAll({})
+  .then(event => {
+    const eventData = event.map(data => data.get({plain: true}));
+    res.render('event', {
+      eventData
     })
   })
   .catch(err => {
