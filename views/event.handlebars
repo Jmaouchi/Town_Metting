@@ -1,11 +1,64 @@
-
-<div class="container">
-  {{#each eventData}}
-  <div class="row">
-    <div class="col-sm">
-      <h1 style="color:white">{{eventName}}</h1>
-      <h1 style="color:white">{{eventAdress}}</h1>  
-    </div>
+<div class="event-context">
+  <div class="head">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="/"><img src="/images/Screenshot 2023-04-10 112519.png" alt="" width="100" ></a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Back Home</span></a>
+          <li class="nav-item">
+            <a class="nav-link events" href="/event">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto input-field">
+        <button type="submit" class="btn btn-primary mb-2 btn-show-hidden-event-box active">Ajouter Un Evenement</button>
+      </div>
+    </nav>
   </div>
-  {{/each}}
+
+  <div class="sections">
+    <div class="container events">
+      {{#each eventData}}
+        <div class="card border-dark mb-3 commity-member-content" style="max-width: 18rem;">
+          <div class="card-header">{{eventName}}</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title">{{eventAdress}}</h5>
+            <p class="card-text">{{description}}</p>
+            <P>Born{{eventDate}}</P>
+            <div style="padding: 10px;">
+              <button class="delete-event btn btn-danger" data-id="{{id}}">Delete</button>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="add-event" hidden>
+      <form>
+        <div class="form-row">
+          <div class="col input-field">
+            <input type="text" class="form-control commityFirstName" placeholder="First name">
+          </div>
+          <div class="col input-field">
+            <input type="text" class="form-control commityLastName" placeholder="Last name">
+          </div>
+          <div class="col input-field">
+            <input type="text" class="form-control commityDateOfBirth" placeholder="Date of birth">
+          </div>
+          <div class="col-auto input-field">
+            <button type="submit" class="btn btn-primary mb-2 commity-submit-btn">Submit</button>
+            <button type="button" class="btn btn-primary mb-2 bg-danger close-box">Close</button>
+          </div>
+        </div> 
+      </form>
+    <div>
+  </div>
+
 </div>
+
+
+<script src="/javascript/delete-event.js"></script>

@@ -118,7 +118,7 @@ nav{
   position: relative;
 }
 
-.add-commity{
+.add-commity, .add-event{
   background-color: rgb(40, 6, 175);
   color: aliceblue;
   position:absolute;
@@ -212,4 +212,14 @@ nav{
 
 .fa-canadian-maple-leaf{
   color: #28a745;
+}
+
+
+.events{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }

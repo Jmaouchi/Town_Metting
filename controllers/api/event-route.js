@@ -33,4 +33,20 @@ router.post('/', (req,res) => {
   });
 })
 
+
+// DELETE an event
+router.delete('/:id',(req,res) => {
+  TownEvents.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(Eventdata => res.json(Eventdata))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
 module.exports = router;
