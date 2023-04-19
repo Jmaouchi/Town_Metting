@@ -21,7 +21,6 @@ function handleEvent(event){
       // show model to be able to edit the family name
       hundleEditFamily(datasetId.id)
     }else if(e==="show-family-members btn btn-info"){
-      alert(datasetId.id)
       showFamilyMembers(datasetId.id)
     }
 }
