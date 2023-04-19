@@ -23,6 +23,7 @@ function loginFormHandler(event) {
     }
   }
 }
+
 // this fetch will send some data to the /api/users endpoint and then in the backend there is another post method to create a new user.
 // in this case, we also have a method that will save the session.
 async function signupFormHandler(event) {
@@ -50,6 +51,8 @@ async function signupFormHandler(event) {
     }
   }
 }
+
+
 document.querySelector('.login-form').addEventListener('click', loginFormHandler);
 document.querySelector('.signup-form').addEventListener('click', signupFormHandler);
 
