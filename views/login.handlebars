@@ -9,54 +9,53 @@
 <div class="login-page">
   <div>
     <div class="container content">
-      <div class="form-content">
+      <div class="form-content login-form">
       <h4>Please fill out the details to continue with our website.</h4>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Username</span>
+            <span class="input-group-text" id="basic-addon1">Email</span>
           </div>
-          <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control email-login" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon2">Password</span>
+            <span class="input-group-text" id="basic-addon2">Password</span>
           </div>
-          <input type="password" class="form-control" aria-label="Password" aria-describedby="basic-addon2">
+          <input type="password" class="form-control password-login" aria-label="Password" aria-describedby="basic-addon2">
         </div>
         <div class="input-group mb-3">
-          <a href="/"><button type="button" class="btn btn-primary mb-2">Login</button></a>
+          <button type="button" class="btn btn-primary mb-2">Login</button>
         </div>
       </div>
     </div>
   </div>
   <div>
-
-	<div class="container content">
-    <div class="form-content">
-      <h4>SignUp if you dont have an account.</h4>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Username</span>
+    <div class="container content signup-form">
+      <div class="form-content">
+        <h4>SignUp if you dont have an account.</h4>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Username</span>
+          </div>
+          <input type="text" class="form-control username-signup" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon2">Password</span>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon2">Password</span>
+          </div>
+          <input type="password" class="form-control password-signup" aria-label="Password" aria-describedby="basic-addon2">
         </div>
-        <input type="password" class="form-control" aria-label="Password" aria-describedby="basic-addon2">
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon2">email</span>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon2">email</span>
+          </div>
+          <input type="text" class="form-control email-signup" aria-label="Email" aria-describedby="basic-addon2">
         </div>
-        <input type="text" class="form-control" aria-label="Email" aria-describedby="basic-addon2">
-      </div>
-      <div class="input-group mb-3">
-        <a href="/"><button type="button" class="btn btn-primary mb-2">SignUp</button></a>
+        <div class="input-group mb-3">
+          <button type="button" class="btn btn-primary mb-2 signup-btn">SignUp</button>
+        </div>
       </div>
     </div>
-	</div>
   </div>
 </div>
 
@@ -66,3 +65,6 @@
   also you are able to see the commity memebers.
   as a village member, you can add submit a form if something need to be fixed
 </div>
+
+
+<script src="/javascript/login.js"></script>

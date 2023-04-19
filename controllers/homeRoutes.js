@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 const {User, Families, Member, Commity, TownEvents} = require('../models')
 
 
 // GET all Families data
-router.get('/', (req,res) => {
+router.get('/', withAuth, (req,res) => {
   Families.findAll({
     include: [
       {
@@ -28,7 +29,7 @@ router.get('/', (req,res) => {
 
 
 // GET a single family by id
-router.get('/family/:id', (req, res) => { 
+router.get('/family/:id', withAuth, (req, res) => { 
   Families.findOne({
     where: {
       id: req.params.id
@@ -103,7 +104,7 @@ router.get('/family/searchByFamilyName/:familyName', (req,res) => {
 
 
 // GET all commity members
-router.get('/commity', (req,res) => {
+router.get('/commity', withAuth, (req,res) => {
   Commity.findAll({})
   .then(commity => {
     const commityData = commity.map(data => data.get({plain: true}));
@@ -119,7 +120,7 @@ router.get('/commity', (req,res) => {
 
 
 // GET all Events
-router.get('/event', (req,res) => {
+router.get('/event',withAuth, (req,res) => {
   TownEvents.findAll({})
   .then(event => {
     const eventData = event.map(data => data.get({plain: true}));
@@ -134,21 +135,21 @@ router.get('/event', (req,res) => {
 })
 
 
-router.get('/login', (req, res) => {
-  User.findAll({
-    // exclude password
-    attributes: { exclude: ['password'] }
-  })
-  // then send the data to the user as json
-    .then(dbPostData => {
-      console.log(dbPostData[0]);
-      // pass a single post object into the homepage template
-      res.render('login');
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.get('/login', (req, res) => {
+//   User.findAll({
+//     // exclude password
+//     attributes: { exclude: ['password'] }
+//   })
+//   // then send the data to the user as json
+//     .then(dbPostData => {
+//       console.log(dbPostData[0]);
+//       // pass a single post object into the homepage template
+//       res.render('login', { loggedIn: true });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 module.exports = router;

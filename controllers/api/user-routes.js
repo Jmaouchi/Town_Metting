@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // send all the data using this api endpoint, and exclude the password from the response
@@ -69,9 +70,9 @@ router.post('/', (req, res) => {
 // check the users login infos
 router.post('/login', (req, res) => {
   User.findOne({
-
     where: {
-      email: req.body.email
+      email: req.body.email,
+      password: req.body.password
     }
   }).then(dbUserData => {
     if (!dbUserData) {
@@ -101,6 +102,7 @@ router.post('/login', (req, res) => {
     });
   });
 });
+
 
 // destroy the session to logout from the page
 router.post('/logout', (req, res) => {
@@ -140,7 +142,7 @@ router.delete('/:id', (req, res) => {
 
 
 // update data  in the user table
-router.put('/:id', (req, res) => {
+router.put('/:id',(req, res) => {
 
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
