@@ -62,7 +62,7 @@ router.post('/', (req,res) => {
     lastName: req.body.lastName,
     dateOfBirth: req.body.dateOfBirth,
     family_id: req.body.family_id
-  })z
+  })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
       console.log(err);
