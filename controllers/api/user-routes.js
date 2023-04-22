@@ -18,32 +18,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
-// find a user by id
-router.get('/:id', (req, res) => {
-  // this will give us a sigle data object from the user table, where the id is = to the req.params.id
-  User.findOne({
-    attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    },
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-
-
 // post data to create a new user or signup
 router.post('/', (req, res) => {
   // in a post its always a create method that we need to use
@@ -71,7 +45,6 @@ router.post('/', (req, res) => {
 // check the users login infos
 router.post('/login', (req, res) => {
   User.findOne({
-
     where: {
       email: req.body.email
     }
@@ -118,6 +91,29 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+
+// find a user by id
+router.get('/:id', (req, res) => {
+  // this will give us a sigle data object from the user table, where the id is = to the req.params.id
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.params.id
+    },
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 
 // delete data from the user table

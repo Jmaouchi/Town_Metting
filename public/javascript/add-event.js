@@ -1,7 +1,7 @@
 const events = document.querySelector('.events');
 
 function addEvent(){
-  alert('Test')
+  
 }
 
 

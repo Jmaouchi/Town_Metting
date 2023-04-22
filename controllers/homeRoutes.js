@@ -142,8 +142,7 @@ router.get('/event',withAuth, (req,res) => {
 //   })
 //   // then send the data to the user as json
 //     .then(dbPostData => {
-//       console.log(dbPostData[0]);
-//       // pass a single post object into the homepage template
+//       console.log(`db post data is ${dbPostData}`);
 //       res.render('login', { loggedIn: true });
 //     })
 //     .catch(err => {
@@ -151,17 +150,6 @@ router.get('/event',withAuth, (req,res) => {
 //       res.status(500).json(err);
 //     });
 // });
-// destroy the session to logout from the page
-router.post('/logout', (req, res) => {
 
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      // the 204 response means that the session has successfully been destroyed.
-      res.redirect('/login')
-    });
-  }else {
-    res.status(404).end();
-  }
-});
 
 module.exports = router;

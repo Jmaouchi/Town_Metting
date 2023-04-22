@@ -8,7 +8,7 @@ function loginFormHandler(event) {
   const email = document.querySelector('.email-login').value.trim();
   const password = document.querySelector('.password-login').value.trim();
   if (email && password) {
-    const response = fetch('/api/users/login', {
+    const response = fetch('/api/user/login', {
       method: 'post',
       body: JSON.stringify({
         email,
@@ -19,7 +19,7 @@ function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert("reload the page and try again");
     }
   }
 }
@@ -47,12 +47,10 @@ async function signupFormHandler(event) {
       // after the account is been created, reffer them to another page
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert("reload page and try again");
     }
   }
 }
-
-
-document.querySelector('.login-form').addEventListener('click', loginFormHandler);
-document.querySelector('.signup-form').addEventListener('click', signupFormHandler);
+document.querySelector('.login').addEventListener('click', loginFormHandler);
+document.querySelector('.signup').addEventListener('click', signupFormHandler);
 
