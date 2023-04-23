@@ -80,7 +80,6 @@ router.post('/login', (req, res) => {
 
 // destroy the session to logout from the page
 router.post('/logout', (req, res) => {
-
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       // the 204 response means that the session has successfully been destroyed.
