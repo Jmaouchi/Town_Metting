@@ -3,19 +3,19 @@
 // If its true then it will send a OK response, if the response is ok (means checked the email and password correctly) in the fetch request, then document.location.replace with whatever you
 // want to show them. also make sure  that in the backed post method, while its checking if the email and password are correct, to add another method to save the session.
 // In the handlebars we can add an if login statement to show them some html they need to see
-function loginFormHandler(event) { 
+async function loginFormHandler(event) { 
   event.preventDefault();
   const email = document.querySelector('.email-login').value.trim();
   const password = document.querySelector('.password-login').value.trim();
   if (email && password) {
-    const response = fetch('/api/user/login', {
+    const response = await fetch('/api/user/login', {
       method: 'post',
       body: JSON.stringify({
         email,
         password
       }),
       headers: { 'Content-Type': 'application/json' }
-    });
+    })
     if (response.ok) {
       document.location.replace('/');
     } else {

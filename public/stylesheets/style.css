@@ -229,4 +229,13 @@ nav{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
+}
+
+.login-context{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
