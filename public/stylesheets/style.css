@@ -234,4 +234,6 @@ nav{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: #535151;
+  padding: 25px;
 }
