@@ -9,6 +9,27 @@ nav{
   color: white;
 }
 
+.nav-item{
+  margin-left: 5px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#home{
+  background-color: rgb(161, 161, 235);
+  color: black;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.nav-item:hover{
+  background-color: rgb(161, 161, 235);
+  color: black;
+  border-radius: 15px;
+}
 
 .main{
   min-height: 100vh;

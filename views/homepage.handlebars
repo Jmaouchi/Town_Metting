@@ -6,19 +6,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="/commity" id="nav-link-padding">Comité</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/commity">committee</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/event">Events</a>
+        <a class="nav-link" href="/event" id="nav-link-padding">Événement</a>
       </li>
             <li class="nav-item">
-        <button class="nav-link logout">Logout</button>
+        <button class="nav-link logout" id="nav-link-padding">Se déconnecter</button>
       </li>
       <li class="nav-item">
         {{!-- you can able this when the user is an admin  --}}
@@ -27,10 +24,10 @@
     </ul>
   </div>
   <form class="form-inline navbar-collapse">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search By Family Name" aria-label="Search" id="search-family-input">
+    <input class="form-control mr-sm-2" type="search" placeholder="Recherche par nom de famille" aria-label="Search" id="search-family-input">
     <button class="btn btn-outline-success my-2 my-sm-0" id="search" type="submit">Search</button>
   </form>
-  <button class="add-model btn btn-primary">Add Family</button>
+  <button class="add-model btn btn-primary">Ajouter Une famille</button>
 </nav>
 {{> addFamilyOverlay}}
 <div class="main-homepage-div" id="main">
