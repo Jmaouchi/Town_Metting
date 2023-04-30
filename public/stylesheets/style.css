@@ -17,6 +17,16 @@ nav{
   justify-content: center;
 }
 
+.tizi{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+  ;
+}
 
 #home{
   background-color: rgb(161, 161, 235);
@@ -24,6 +34,14 @@ nav{
   border-radius: 15px;
   padding: 15px;
 }
+
+.propos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
 
 .nav-item:hover{
   background-color: rgb(161, 161, 235);
@@ -33,7 +51,7 @@ nav{
 
 .main{
   min-height: 100vh;
-  background-color: rgb(5, 11, 70);
+  background-color: rgb(205, 206, 212);
   padding: 10px;
 }
 
@@ -164,15 +182,19 @@ nav{
   color: white;
 }
 
-.header{
+.title{
   display: flex;
   align-items: center;
   justify-content: center;
   border-top: 3px solid #28a745;
-  background: #495057;
+  background: #1677d8;
   color: #fff;
   padding: 1%;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  margin-top: 45px;
 }
+
 
 .header-left i{
   margin-left: 5%;
@@ -255,6 +277,7 @@ nav{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #535151;
+  background-color: #a99f9f;
+  color: black;
   padding: 25px;
 }
