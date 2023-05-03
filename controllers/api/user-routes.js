@@ -60,7 +60,7 @@ router.post('/login', (req, res) => {
     const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
+      res.status(400).json({ message: 'Incorrect password!'});
       return;
     }
     // This gives our server easy access to the user's user_id, username, and a Boolean describing whether or not the user is logged in

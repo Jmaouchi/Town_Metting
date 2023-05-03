@@ -19,7 +19,7 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert("reload the page and try again");
+      alert("Email ou mote de pass pas trouver");
     }
   }
 }
