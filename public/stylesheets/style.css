@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 *{
   margin: 0;
   padding: 0;
@@ -59,7 +61,7 @@ nav{
   margin: 10px;
 }
 
-.row{
+.main-row{
   min-height: 100vh;
 }
 
@@ -271,13 +273,13 @@ nav{
   color: white;
 }
 
-.login-context{
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #a99f9f;
+/* .login-context{
   color: black;
   padding: 25px;
+  margin: 10px;
+} */
+
+
+.propos-row{
+  margin-top: 15px;
 }
