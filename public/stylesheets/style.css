@@ -282,3 +282,63 @@ nav{
 .propos-row{
   margin-top: 15px;
 }
+
+blockquote {
+  position: relative;
+}
+
+blockquote::before {
+  content: "“";
+  font-family: "Slabo 13px",serif;
+  font-size: 3.52941em;
+  line-height: 1.3em;
+  font-weight: bold;
+  color: #1b7fa4;
+  position: absolute;
+  left: -45px;
+  top:-60px;
+}
+
+
+.wrong-route{
+  color: black;
+}
+
+
+
+@media (max-width: 768px) {
+  .add-commity, .add-event{
+    background-color: rgb(40, 6, 175);
+    color: aliceblue;
+    position:absolute;
+    top: 30%;
+    left: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 30%; */
+    padding: 35px;
+    min-height: 40vh;
+    border-radius: 0%;
+  }
+}
+
+
+
+
+@media (max-width: 556px) {
+  .add-commity, .add-event{
+    background-color: rgb(40, 6, 175);
+    color: aliceblue;
+    position:absolute;
+    top: 33%;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 30%; */
+    padding: 35px;
+    min-height: 20vh;
+    border-radius: 0%;
+  }
+}
