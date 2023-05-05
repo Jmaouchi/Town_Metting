@@ -12,6 +12,10 @@ Member.init(
       primaryKey: true,
       autoIncrement: true
     },
+    code: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false

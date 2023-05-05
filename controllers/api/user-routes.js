@@ -5,7 +5,6 @@ const withAuth = require('../../utils/auth');
 
 // send all the data using this api endpoint, and exclude the password from the response
 router.get('/', (req, res) => {
-
   User.findAll({
     // exclude password
     attributes: { exclude: ['password'] }
@@ -43,7 +42,7 @@ router.post('/', (req, res) => {
 
 
 // check the users login infos
-router.post('/login', (req, res) => {
+router.post('/login',  (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
@@ -120,7 +119,6 @@ router.delete('/:id', (req, res) => {
   // in a post its always a create method that we need to use
   User.destroy({
     where:{id: req.params.id}
-
   })
     .then(dbUserData => {
       if(!dbUserData){

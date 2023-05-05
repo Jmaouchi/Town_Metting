@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const {Commity} = require("../../models");
+const {authPage, auCourse} = require('../../middlewares/middlewares')
 
 
 // GET all data from Families table
-router.get('/', (req,res) => {
+router.get('/',(req,res) => {
   Commity.findAll({})
   .then(dbUserData => {
     if (!dbUserData) {
@@ -20,8 +21,9 @@ router.get('/', (req,res) => {
 
 
 // POST a commity member
-router.post('/', (req,res) => {
+router.post('/', authPage("1994"), (req,res) => {
   Commity.create({
+    code: req.body.code,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     dateOfBirth: req.body.dateOfBirth,

@@ -21,12 +21,14 @@ async function familyFormHandler(event) {
   event.preventDefault();
 
   // make sure that this const is inside the familyFormHandler function
+  const code = document.querySelector('.code').value.trim()
   const familyName = document.querySelector('.family-name-input').value.trim()
 
   if(familyName){
     const response = await fetch('/api/family', {
       method: 'POST',
       body: JSON.stringify({
+        code,
         familyName
       }),
       headers: {

@@ -17,6 +17,7 @@ async function loginFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     })
     if (response.ok) {
+      localStorage.setItem("email", email);
       document.location.replace('/');
     } else {
       alert("Email ou mote de pass pas trouver");

@@ -5,7 +5,7 @@ const {User, Families, Member, Commity, TownEvents} = require('../models')
 
 
 // GET all Families data
-router.get('/', withAuth, (req,res) => {
+router.get('/', withAuth,(req,res) => {
   Families.findAll({
     include: [
       {

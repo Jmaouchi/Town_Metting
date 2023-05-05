@@ -9,14 +9,16 @@ async function addCommity(event){
   event.preventDefault();
 
   // get the input values
+  const code = document.querySelector('.code').value.trim();
   const firstName = document.querySelector('.commityFirstName').value.trim();
   const lastName = document.querySelector('.commityLastName').value.trim();
   const dateOfBirth = document.querySelector('.commityDateOfBirth').value.trim();
 
-  if(firstName, lastName, dateOfBirth){
+  if(code, firstName, lastName, dateOfBirth){
     const response = await fetch('/api/commity', {
       method: 'POST',
       body: JSON.stringify({
+        code,
         firstName,
         lastName,
         dateOfBirth
@@ -29,6 +31,7 @@ async function addCommity(event){
       // Reload the page and hide the Model Overlay
       document.location.assign('/commity');
     } else {
+      alert("Ceci ne peut pas être terminé, vous n'êtes pas un administrateur")
       alert(response.statusText);
     }
   }else{

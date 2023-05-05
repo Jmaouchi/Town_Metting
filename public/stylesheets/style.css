@@ -79,24 +79,17 @@ nav{
   position: sticky;
   top: 10%;
   left: 40%;
-  padding: 80px;
+  padding: 20px;
   margin-bottom: 15px;
-  width: 300px;
-  background-color: rgb(96, 93, 93);
+  /* width: 300px; */
+  background-color: rgb(18, 18, 182);
+  color: wheat;
   /* display: none; */
   z-index: 999;
 }
 
 .add-family-heading{
   font-size: 17px;
-}
-
-.model-save-input{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
 }
 
 

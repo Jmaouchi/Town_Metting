@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User, Families, Member} = require("../../models");
+const {authPage, auCourse} = require('../../middlewares/middlewares')
 
 
 // GET all data from Families table
@@ -83,8 +84,9 @@ router.get('/searchByFamilyName/:familyName', (req, res) => {
 
 
 // POST a family 
-router.post('/', (req,res) => {
+router.post('/', authPage("1994"), (req,res) => {
   Families.create({
+    code: req.body.code,
     familyName: req.body.familyName
   })
     .then(dbFamilyData => res.json(dbFamilyData))

@@ -12,6 +12,10 @@ TownEvents.init(
       primaryKey: true,
       autoIncrement: true
     },
+    code: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     eventName: {
       type: DataTypes.STRING,
       allowNull: false
