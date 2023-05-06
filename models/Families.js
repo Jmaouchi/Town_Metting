@@ -12,10 +12,10 @@ Families.init(
       primaryKey: true,
       autoIncrement: true
     },
-    code: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // code: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
     familyName: {
       type: DataTypes.STRING,
       allowNull: false
