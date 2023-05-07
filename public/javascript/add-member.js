@@ -5,6 +5,7 @@ const showMemberBox = document.querySelector('.show-add-member-box');
 
 async function addMember(event){
   event.preventDefault()
+  const code = document.querySelector('.code').value.trim();
   const firstName = document.querySelector('.memberFirstName').value.trim();
   const lastName = document.querySelector('.memberLastName').value.trim();
   const dateOfBirth = document.querySelector('.memberDateOfBirth').value.trim();
@@ -15,6 +16,7 @@ async function addMember(event){
   const response = await fetch('/api/member', {
     method: 'POST',
     body: JSON.stringify({
+      code,
       firstName,
       lastName,
       dateOfBirth,

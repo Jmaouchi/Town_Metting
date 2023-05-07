@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {Member, Families} = require("../../models");
+const {authPage, auCourse} = require('../../middlewares/middlewares')
 
 
 // get all memebers
@@ -56,8 +57,9 @@ router.get('/:id', (req, res) => {
 
 
 // post a member
-router.post('/', (req,res) => {
+router.post('/', authPage('1994'), (req,res) => {
   Member.create({
+    code: req.body.code,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     dateOfBirth: req.body.dateOfBirth,

@@ -41,21 +41,26 @@ async function addCommity(event){
 
 
 
+
 async function deleteCommityMember(event){
   // Get the className of the clicked element
   const e = event.target.className;
   // Get the datasetIf of the clicked element
   const datasetId = event.target.dataset;
-
-  if(e==="delete-commity-member btn btn-danger"){
-    fetch('/api/commity/' + datasetId.id,{
-      method: 'DELETE'
-    })
-    .then(response => response.json())
-    .then(data => {
-      // you can also use another fetch request to fetch all the data again instead of using a reload.
-        window.location.reload();
-    });
+  const emailFromLocalStroage = localStorage.getItem("email");
+  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com"){
+    if(e==="delete-commity-member btn btn-danger"){
+      fetch('/api/commity/' + datasetId.id,{
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(data => {
+        // you can also use another fetch request to fetch all the data again instead of using a reload.
+          window.location.reload();
+      });
+    }
+  }else{
+    alert("Vous n'êtes pas un administrateur pour supprimer ceci")
   }
 }
 
@@ -73,7 +78,7 @@ hideBox = () => {
 
 
 
-deleteCommity.addEventListener('click', deleteCommityMember)
+deleteCommity.addEventListener('click',  deleteCommityMember)
 commityBtn.addEventListener('click', addCommity)
 committeeBox.addEventListener('click', showHiddenBox)
 closeHiddenBox.addEventListener('click', hideBox)
