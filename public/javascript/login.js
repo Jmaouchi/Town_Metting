@@ -45,6 +45,8 @@ async function signupFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     if (response.ok) {
+      // set the email to local storage
+      localStorage.setItem("email", email);
       // after the account is been created, reffer them to another page
       document.location.replace('/');
     } else {
