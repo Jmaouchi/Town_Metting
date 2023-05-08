@@ -21,6 +21,8 @@ function deleteEvent (event) {
 
 
 deleteEventHandler = (id) => {
+  const emailFromLocalStroage = localStorage.getItem("email");
+  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
   fetch('/api/event/' + id,{
     method: 'DELETE'
   })
@@ -29,6 +31,9 @@ deleteEventHandler = (id) => {
     // you can also use another fetch request to fetch all the data again instead of using a reload.
       window.location.reload();
   });
+}else{
+  alert('cant ')
+}
 }
 
 // show hidden box
