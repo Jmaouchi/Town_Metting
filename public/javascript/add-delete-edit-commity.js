@@ -48,7 +48,7 @@ async function deleteCommityMember(event){
   // Get the datasetIf of the clicked element
   const datasetId = event.target.dataset;
   const emailFromLocalStroage = localStorage.getItem("email");
-  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com"){
+  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
     if(e==="delete-commity-member btn btn-danger"){
       fetch('/api/commity/' + datasetId.id,{
         method: 'DELETE'

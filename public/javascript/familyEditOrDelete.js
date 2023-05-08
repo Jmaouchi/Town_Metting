@@ -28,7 +28,7 @@ function handleEvent(event){
 
 function deleteFamily(id){
   const emailFromLocalStroage = localStorage.getItem("email");
-  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com"){
+  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
     fetch('/api/family/' + id,{
       method: 'DELETE'
     })
@@ -46,7 +46,7 @@ function deleteFamily(id){
 // Edit an existing family
 function hundleEditFamily(id){
   const emailFromLocalStroage = localStorage.getItem("email")
-  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com"){
+  if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
     if(mainHomepageDiv.classList.contains('model-on')){
       alert('Edit the current clicked family first')
     }else{
@@ -105,22 +105,6 @@ function hundleEditFamily(id){
     alert("Vous n'êtes pas un administrateur pour supprimer ceci")
   }
 }
-
-
-// function loadData(){
-//   fetch('/api/family/'{
-//         method:'GET',
-//         headers:{
-//           "Content-Type" : "application/json"
-//         }
-//       })
-//       .then(response => response.json())
-//       .then(data => {
-//         // realod the page, but here we can do another api call to fetch the data again a
-//         window.location.reload();
-//       });
-
-// }
 
 
 function showFamilyMembers(id){

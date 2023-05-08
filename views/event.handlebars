@@ -7,7 +7,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Retour à l'accueil</span></a>
           <li class="nav-item">
-            <a class="nav-link events" href="/event">Événement</a>
+            <a class="nav-link event" href="/event">Événement</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Prix</a>
@@ -23,7 +23,7 @@
   <div class="sections">
     <div class="container events">
       {{#each eventData}}
-        <div class="card border-dark mb-3 commity-member-content" style="max-width: 18rem;">
+        <div class="card border-dark mb-3 event-member-content" style="max-width: 18rem;">
           <div class="card-header">{{eventName}}</div>
           <div class="card-body text-dark">
             <h5 class="card-title">{{eventAdress}}</h5>
@@ -36,31 +36,34 @@
         </div>
       {{/each}}
     </div>
-
-    <div class="add-event" hidden>
-      <form>
-        <div class="form-row">
-          <div class="col input-field">
-            <input type="text" class="form-control code" placeholder="Code d'administrateur">
-          </div>
-          <div class="col input-field">
-            <input type="text" class="form-control commityFirstName" placeholder="Prenom">
-          </div>
-          <div class="col input-field">
-            <input type="text" class="form-control commityLastName" placeholder="Nom">
-          </div>
-          <div class="col input-field">
-            <input type="text" class="form-control commityDateOfBirth" placeholder="Date de naissance">
-          </div>
-          <div class="col-auto input-field">
-            <button type="submit" class="btn btn-primary mb-2 commity-submit-btn">Soumettre</button>
-            <button type="button" class="btn btn-primary mb-2 bg-danger close-box">Fermer</button>
-          </div>
-        </div> 
-      </form>
-    <div>
   </div>
+  <div class="add-event" hidden>
+    <form>
+      <div class="form-row">
+        <div class="col input-field">
+          <input type="text" class="form-control code" placeholder="Code d'administrateur">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control eventName" placeholder="eventName">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control eventAddress" placeholder="eventAddress">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control eventDate" placeholder="eventDate">
+        </div>
+          <div class="col input-field">
+          <input type="text" class="form-control description" placeholder="description">
+        </div>
+        <div class="col-auto input-field">
+          <button type="submit" class="btn btn-primary mb-2 event-submit-btn">Soumettre</button>
+          <button type="button" class="btn btn-primary mb-2 bg-danger close-box">Fermer</button>
+        </div>
+      </div> 
+    </form>
+  <div>
 </div>
 
 
 <script src="/javascript/delete-event.js"></script>
+<script src="/javascript/add-event.js"></script>

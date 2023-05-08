@@ -21,8 +21,9 @@ router.get('/', (req,res) => {
 
 router.post('/', (req,res) => {
   TownEvents.create({
+    code: req.body.code,
     eventName: req.body.eventName,
-    eventAdress: req.body.eventAdress,
+    eventAdress: req.body.eventAddress,
     eventDate: req.body.eventDate,
     description: req.body.description
   })
