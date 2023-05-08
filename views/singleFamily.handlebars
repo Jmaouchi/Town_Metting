@@ -31,9 +31,9 @@
         Member Infos
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">First Name: {{this.firstName}}</li>
-        <li class="list-group-item">Family Name: {{this.lastName}}</li>
-        <li class="list-group-item">Date Of Birth: {{this.dateOfBirth}}</li>
+        <li class="list-group-item">Date de naissance: {{this.firstName}}</li>
+        <li class="list-group-item">Prenom: {{this.lastName}}</li>
+        <li class="list-group-item">Date de naissance: {{this.dateOfBirth}}</li>
       </ul>
 
       <div style="padding: 10px;">
@@ -42,31 +42,31 @@
     </div>
     {{/each}}
       {{else}}
-    <div style="color:white">No Memberes Yet</div>
+    <div style="color:white">Aucun membre</div>
   {{/if}}
 </div>
-<button class="btn btn-primary show-add-member-box">Add Member</button>
+<button class="btn btn-primary show-add-member-box">Ajouter un membre</button>
 
 <form class="add-member-form" hidden>
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationDefault01" class="form-content">Code d'administrateur</label>
+      <label for="validationDefault01" class="label">Code d'administrateur</label>
       <input type="text" class="form-control code" id="validationDefault01" placeholder="Votre code" required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationDefault01" class="form-content">First name</label>
-      <input type="text" class="form-control memberFirstName" id="validationDefault01" placeholder="First name" required>
+      <label for="validationDefault01" class="label">Nom</label>
+      <input type="text" class="form-control memberFirstName" id="validationDefault01" placeholder="Nom" required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationDefault02"  class="form-content">Last name</label>
-      <input type="text" class="form-control memberLastName" id="validationDefault02" placeholder="Last name"  required>
+      <label for="validationDefault02"  class="label">Prenom</label>
+      <input type="text" class="form-control memberLastName" id="validationDefault02" placeholder="Prenom"  required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationDefault03"  class="form-content">Date Of Birth</label>
-      <input type="text" class="form-control memberDateOfBirth" id="validationDefault03" placeholder="Date Of Birth" required>
+      <label for="validationDefault03"  class="label">Date de naissance</label>
+      <input type="text" class="form-control memberDateOfBirth" id="validationDefault03" placeholder="Date de naissance" required>
     </div>
   </div>
-  <button class="btn btn-primary add-member" type="submit">Submit form</button>
+  <button class="btn btn-success add-member" type="submit">Submit form</button>
 </form>
 
 <script src="/javascript/add-member.js"></script>

@@ -167,6 +167,16 @@ nav{
   border-radius: 10%;
 }
 
+.add-member-form{
+  color: black;
+  background-color: #1677d8;
+  padding: 22px;
+}
+
+.label{
+  font-size: 25px;
+}
+
 
 .input-field{
   margin: 10px;
