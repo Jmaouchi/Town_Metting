@@ -26,7 +26,8 @@ router.post('/', authPage("1994"), (req,res) => {
     code: req.body.code,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    dateOfBirth: req.body.dateOfBirth,
+    role: req.body.role,
+    startedDate: req.body.startedDate
   })
   .then(dbCommityData => res.json(dbCommityData))
   .catch(err => {

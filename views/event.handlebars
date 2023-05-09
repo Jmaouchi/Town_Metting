@@ -24,13 +24,13 @@
     <div class="container events">
       {{#each eventData}}
         <div class="card border-dark mb-3 event-member-content" style="max-width: 18rem;">
-          <div class="card-header">{{eventName}}</div>
+          <div class="card-header"><span class="member-span">Nome De L'événement:</span> {{eventName}}</div>
           <div class="card-body text-dark">
-            <h5 class="card-title">{{eventAdress}}</h5>
-            <p class="card-text">{{description}}</p>
-            <P>Born{{eventDate}}</P>
+            <p class="card-title"><span class="member-span">Lieu</span> {{eventAdress}}</p>
+            <p class="card-text"><span class="member-span">Description</span>: {{description}}</p>
+            <p><span class="member-span">Date:</span> {{eventDate}}</p>
             <div style="padding: 10px;">
-              <button class="delete-event btn btn-danger" data-id="{{id}}">Suprimer Evenement</button>
+              <button class="delete-event btn btn-danger" data-id="{{id}}">Suprimer L'événement</button>
             </div>
           </div>
         </div>

@@ -22,20 +22,29 @@
   </nav>
 
 
-  <div class="commity-member">
-    {{#each commityData}}
-    <div class="card border-dark mb-3 commity-member-content" style="max-width: 18rem;">
-      <div class="card-header">{{firstName}}</div>
-      <div class="card-body text-dark">
-        <h5 class="card-title">{{lastName}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <P>Born{{dateOfBirth}}</P>
-        <div style="padding: 10px;">
-          <button class="delete-commity-member btn btn-danger" data-id="{{id}}">Suprimer</button>
-        </div>
-      </div>
-    </div>
-    {{/each}}
+  <div class="commity-member table-responsive-sm">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th>Role</th>
+          <th scope="col">Début</th>
+          <th scope="col">Suprimer</th>
+        </tr>
+      </thead>
+      {{#each commityData}}
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>{{firstName}} {{lastName}}</td>
+          <td>{{role}}</td>
+          <td>{{startedDate}}</td>
+          <td><button class="delete-commity-member bg-warning" data-id="{{id}}">Suprimer</button></td>
+        </tr>
+      </tbody>
+      {{/each}}
+    </table>
   </div>
 
   <div class="add-commity" hidden>
@@ -51,7 +60,10 @@
           <input type="text" class="form-control commityLastName" placeholder="Nom du condidat">
         </div>
         <div class="col input-field">
-          <input type="text" class="form-control commityDateOfBirth" placeholder="Date de naissance">
+          <input type="text" class="form-control role" placeholder="Role">
+        </div>
+        <div class="col input-field">
+          <input type="text" class="form-control startedDate" placeholder="Date de debut">
         </div>
         <div class="col-auto input-field">
           <button type="submit" class="btn btn-primary mb-2 commity-submit-btn">soumettre</button>

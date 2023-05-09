@@ -25,6 +25,7 @@ nav{
   background-size: cover;
   width: 100%;
   display: flex;
+  flex-direction:column;
   align-items: center;
   justify-content: center
   ;
@@ -54,7 +55,6 @@ nav{
 .main{
   min-height: 100vh;
   background-color: rgb(205, 206, 212);
-  padding: 10px;
 }
 
 .add-model{
@@ -93,6 +93,7 @@ nav{
 }
 
 
+
 .add-family-container{
   border-radius: 25px;
   position: sticky;
@@ -122,6 +123,14 @@ nav{
   flex-direction: row;
   gap: 15px;
 }
+
+.member-span{
+  color: rgb(8, 123, 224);
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px;
+}
+
 
 .show-add-member-box{
   margin-top: 20px;
@@ -172,6 +181,8 @@ nav{
   background-color: #1677d8;
   padding: 22px;
 }
+
+
 
 .label{
   font-size: 25px;

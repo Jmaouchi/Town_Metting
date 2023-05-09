@@ -24,7 +24,11 @@ Commity.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    dateOfBirth: {
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    startedDate: {
       type: DataTypes.STRING,
       allowNull: false
     },

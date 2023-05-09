@@ -12,16 +12,18 @@ async function addCommity(event){
   const code = document.querySelector('.code').value.trim();
   const firstName = document.querySelector('.commityFirstName').value.trim();
   const lastName = document.querySelector('.commityLastName').value.trim();
-  const dateOfBirth = document.querySelector('.commityDateOfBirth').value.trim();
+  const role = document.querySelector('.role').value.trim();
+  const startedDate= document.querySelector('.startedDate').value.trim();
 
-  if(code, firstName, lastName, dateOfBirth){
+  if(code, firstName, lastName, role, startedDate){
     const response = await fetch('/api/commity', {
       method: 'POST',
       body: JSON.stringify({
         code,
         firstName,
         lastName,
-        dateOfBirth
+        role: role,
+        startedDate
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -49,7 +51,7 @@ async function deleteCommityMember(event){
   const datasetId = event.target.dataset;
   const emailFromLocalStroage = localStorage.getItem("email");
   if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
-    if(e==="delete-commity-member btn btn-danger"){
+    if(e==="delete-commity-member bg-warning"){
       fetch('/api/commity/' + datasetId.id,{
         method: 'DELETE'
       })
