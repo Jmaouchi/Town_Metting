@@ -96,11 +96,10 @@ nav{
 
 .add-family-container{
   border-radius: 25px;
-  position: sticky;
-  top: 40%;
-  left: 40%;
-  padding: 80px;
-  width: 300px;
+  position: absolute;
+  top: 0%;
+  padding: 30px;
+  width: 100%;
   background-color: rgb(192, 12, 12);
   /* display: none; */
   z-index: 999;
