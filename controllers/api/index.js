@@ -4,12 +4,14 @@ const familyRoutes = require('./families-routes');
 const memberRoutes = require('./member-routes');
 const commityRoute = require('./commity-route');
 const eventRoute = require('./event-route')
+const helpRoute = require('./help-route')
 
 router.use('/user', userRoutes);
 router.use('/family', familyRoutes);
 router.use('/member', memberRoutes);
 router.use('/commity', commityRoute);
 router.use('/event', eventRoute);
+router.use('/help', helpRoute)
 // router.use('/population', populationRoutes);
 
 

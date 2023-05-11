@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="/"><img src="/images/Screenshot 2023-04-10 112519.png" alt="" width="100" ></a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/" id="home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/commity" id="nav-link-padding">Comité</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/event" id="nav-link-padding">Événement</a>
+      </li>
+            <li class="nav-item">
+        <button class="nav-link logout" id="nav-link-padding">Se déconnecter</button>
+      </li>
+      <li class="nav-item">
+        {{!-- you can able this when the user is an admin  --}}
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-auto input-field">
+    <a href="#ajouter"><button type="submit" class="btn btn-primary mb-2 btn-show-hidden-help-box active">Signaler Un Problème</button></a> 
+  </div>
+</nav>
+
+
+<div class="sections">
+  <div class="container events">
+    {{#each helpData}}
+      <div class="card border-dark mb-3 event-member-content" style="max-width: 18rem;">
+        <div class="card-header"><span class="member-span">Créé par:</span> {{fullName}}</div>
+        <div class="card-body text-dark">
+          <p class="card-title"><span class="member-span">Telephone:</span> {{numero}}</p>
+          <p class="card-text"><span class="member-span">Problème:</span>: {{issue}}</p>
+          <p><span class="member-span">Date:</span> {{createdAt}}</p>
+          <div style="padding: 10px;">
+            <button class="delete-problem btn btn-danger" data-id="{{id}}">Suprimer L'événement</button>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="request-help-form" id="ajouter" hidden >
+  <p class="ajouter-paragraph text-danger p-2">Remplissez ce formulaire pour demander de l'aide avec votre affaire</p>
+  <form>
+    <div class="form-row">
+      <div class="col input-field">
+        <input type="text" class="form-control fullName" placeholder="Nom et Prenom">
+      </div>
+      <div class="col input-field">
+        <input type="text" class="form-control numero" placeholder="Numero du telephone">
+      </div>
+      <div class="col input-field">
+        <textarea type="text" class="form-control probleme" placeholder="Description du Problème"></textarea>
+      </div>
+      <div class="col-auto input-field">
+        <button type="submit" class="btn btn-primary mb-2 event-submit-btn">Soumettre</button>
+        <button type="button" class="btn btn-primary mb-2 bg-danger close-box">Fermer</button>
+      </div>
+    </div> 
+  </form>
+<div>
+
+
+{{!-- <script src="/javascript/delete-event.js"></script> --}}
+<script src="/javascript/add-help-ticket.js"></script>

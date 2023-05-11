@@ -323,10 +323,16 @@ blockquote::before {
   top:-60px;
 }
 
+.ajouter-paragraph{
+  color: red;
+}
+
 
 .wrong-route{
   color: black;
 }
+
+
 
 
 

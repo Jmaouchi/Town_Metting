@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const {User, Families, Member, Commity, TownEvents} = require('../models')
+const {User, Families, Member, Commity, TownEvents, Help} = require('../models')
 
 
 // GET all Families data
@@ -135,21 +135,21 @@ router.get('/event',withAuth, (req,res) => {
 })
 
 
-// router.get('/login', (req, res) => {
-//   User.findAll({
-//     // exclude password
-//     attributes: { exclude: ['password'] }
-//   })
-//   // then send the data to the user as json
-//     .then(dbPostData => {
-//       console.log(`db post data is ${dbPostData}`);
-//       res.render('login', { loggedIn: true });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+
+// get all help tickets
+router.get('/help', (req,res) => {
+  Help.findAll({})
+  .then(ticket => {
+    const helpData = ticket.map(data => data.get({plain: true}));
+    res.render('requestHelp', {
+      helpData
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 
 module.exports = router;
