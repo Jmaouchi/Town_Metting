@@ -137,7 +137,7 @@ router.get('/event',withAuth, (req,res) => {
 
 
 // get all help tickets
-router.get('/help', (req,res) => {
+router.get('/help', withAuth, (req,res) => {
   Help.findAll({})
   .then(ticket => {
     const helpData = ticket.map(data => data.get({plain: true}));

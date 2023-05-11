@@ -1,5 +1,5 @@
 const helpForm = document.querySelector('.request-help-form');
-const btnSubmitHelp = document.querySelector('.event-submit-btn');
+const btnSubmitHelp = document.querySelector('.help-submit-btn');
 const showHelpBox = document.querySelector('.btn-show-hidden-help-box');
 
 
