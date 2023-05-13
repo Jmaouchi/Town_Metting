@@ -23,17 +23,17 @@ function deleteHelp (event) {
 deleteHelpHandler = (id) => {
   const emailFromLocalStroage = localStorage.getItem("email");
   if(emailFromLocalStroage === "djigo.maouchi@yahoo.com" || emailFromLocalStroage === "Djigo.maouchi@yahoo.com"){
-  fetch('/api/help/' + id,{
-    method: 'DELETE'
-  })
-  .then(response => response.json())
-  .then(data => {
-    // you can also use another fetch request to fetch all the data again instead of using a reload.
-      window.location.reload();
-  });
-}else{
-  alert('cant')
-}
+    fetch('/api/help/' + id,{
+      method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+      // you can also use another fetch request to fetch all the data again instead of using a reload.
+        window.location.reload();
+    });
+  }else{
+    alert('cant')
+  }
 }
 
 // show hidden box

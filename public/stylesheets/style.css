@@ -135,6 +135,12 @@ nav{
   margin-top: 20px;
 }
 
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar-collapse{
   display: flex;
   align-items: center;

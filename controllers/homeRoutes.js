@@ -135,8 +135,7 @@ router.get('/event',withAuth, (req,res) => {
 })
 
 
-
-// get all help tickets
+// GET all help tickets
 router.get('/help', withAuth, (req,res) => {
   Help.findAll({})
   .then(ticket => {

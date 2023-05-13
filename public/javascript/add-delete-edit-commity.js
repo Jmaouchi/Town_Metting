@@ -2,8 +2,7 @@ const commityBtn = document.querySelector('.commity-submit-btn');
 const deleteCommity = document.querySelector('.commity-member');
 const committeeBox = document.querySelector('.btn-show-hidden-box');
 const hiddenBox = document.querySelector('.add-commity');
-const closeHiddenBox = document.querySelector('.close-box')
-
+const closeHiddenBox = document.querySelector('.close-box');
 
 async function addCommity(event){
   event.preventDefault();
@@ -37,10 +36,9 @@ async function addCommity(event){
       alert(response.statusText);
     }
   }else{
-    alert('Somethig is missing!!')
+    alert('Somethig is missing!')
   }
 }
-
 
 
 
@@ -75,8 +73,6 @@ showHiddenBox = () => {
 hideBox = () => {
   hiddenBox.hidden = true;
 }
-
-
 
 
 

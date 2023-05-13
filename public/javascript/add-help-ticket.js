@@ -3,7 +3,6 @@ const btnSubmitHelp = document.querySelector('.help-submit-btn');
 const showHelpBox = document.querySelector('.btn-show-hidden-help-box');
 
 
-
 async function addHelp(event){
   event.preventDefault()
   const fullName = document.querySelector('.fullName').value.trim();
