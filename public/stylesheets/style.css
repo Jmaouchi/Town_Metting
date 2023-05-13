@@ -27,8 +27,7 @@ nav{
   display: flex;
   flex-direction:column;
   align-items: center;
-  justify-content: center
-  ;
+  justify-content: center;
 }
 
 #home{
@@ -151,17 +150,6 @@ nav{
   margin: 15px;
 }
 
-
-.commity-member {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-
 .my-commity{
   position: relative;
 }
@@ -228,9 +216,8 @@ nav{
 }
 
 .content{
-  background: #28a745;
-  width: 70%;
-  border-radius: 15px;
+  background: #3947c5;
+  border-top-left-radius: 50px;
 }
 
 .content .form-content{
@@ -271,6 +258,7 @@ nav{
   justify-content: center;
   gap: 10px;
   margin-top:15px;
+  padding: 10px;
 }
 
 .fa-canadian-maple-leaf{

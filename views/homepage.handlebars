@@ -24,10 +24,10 @@
     <input class="form-control mr-sm-2" type="search" placeholder="Recherche par nom de famille" aria-label="Search" id="search-family-input">
     <button class="btn btn-outline-success my-2 my-sm-0 fa-beat-fade" id="search" type="submit">Recherche</button>
   </form>
-  <button class="add-model btn btn-primary">Ajouter Une famille</button>
 </nav>
 {{> addFamilyOverlay}}
 <div class="main-homepage-div" id="main">
+    <button class="add-model btn btn-primary">Ajouter Une famille</button>
   {{!-- displya all the family data  --}}
   <div class="row main-row">
     {{#each familyData as |data|}}

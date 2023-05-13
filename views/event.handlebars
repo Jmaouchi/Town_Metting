@@ -16,17 +16,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/help">Aide villageois  <i class="fa-regular fa-calendar-days"></i></a>
         </li>
-        <li>
-          <div class="col-auto input-field">
-            <button type="submit" class="btn btn-primary mb-2 btn-show-hidden-event-box active nav-link text-light">Ajouter Un Evenement</button>
-          </div>
-        </li>
       </ul>
     </div>
     </nav>
   </div>
 
   <div class="sections">
+    <div class="col-auto input-field">
+      <button type="submit" class="btn btn-primary mb-2 btn-show-hidden-event-box active">Ajouter Un Evenement</button>
+    </div>
     <div class="container events">
       {{#each eventData}}
         <div class="card border-dark mb-3 event-member-content" style="max-width: 18rem;">
