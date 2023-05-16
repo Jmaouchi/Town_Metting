@@ -439,8 +439,8 @@ blockquote::before {
   }
 
   .carousel {
-    width: 40vw;
-    height: 40vh;
+    width: 90%;
     position: relative;
+    background-color: red;
   }
 }
