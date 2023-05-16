@@ -437,4 +437,10 @@ blockquote::before {
     min-height: 20vh;
     border-radius: 0%;
   }
+
+  .carousel {
+    width: 40vw;
+    height: 40vh;
+    position: relative;
+  }
 }
