@@ -1,11 +1,23 @@
 const router = require('express').Router();
 const {User, Families, Member} = require("../../models");
-const {authPage, auCourse} = require('../../middlewares/middlewares')
+const {authPage, auCourse} = require('../../middlewares/middlewares');
+const sequelize = require('../../config/connection');
 
 
 // GET all data from Families table
 router.get('/', (req,res) => {
   Families.findAll({
+    // order from A to Z, also you can order it frm Z to A with changing the ASC to DESC
+    order: [[
+      'familyName', 'ASC'
+    ]],
+    // /* if you want to get the summary or average of all the id's 
+    //    attributes:[
+    //      [sequelize.fn('SUM or AVG', sequelize.col('Families.id')), 'achhal']],
+    // also if i want to filter by name
+    //  where:{
+    //    familyName: "maouchi"
+    //  }, */
     include: [
       {
         model: Member, 
