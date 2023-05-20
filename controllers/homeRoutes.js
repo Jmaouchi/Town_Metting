@@ -7,6 +7,9 @@ const {User, Families, Member, Commity, TownEvents, Help} = require('../models')
 // GET all Families data
 router.get('/', withAuth,(req,res) => {
   Families.findAll({
+    order: [[
+      'familyName', 'ASC'
+    ]],
     include: [
       {
         model: Member, 
