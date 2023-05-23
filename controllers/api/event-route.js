@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {TownEvents} = require('../../models')
+const {authPage, auCourse} = require('../../middlewares/middlewares')
 
 // GET all data from Families table
 router.get('/', (req,res) => {
@@ -19,7 +20,7 @@ router.get('/', (req,res) => {
 });
 
 
-router.post('/', (req,res) => {
+router.post('/',authPage("1994"), (req,res) => {
   TownEvents.create({
     code: req.body.code,
     eventName: req.body.eventName,
