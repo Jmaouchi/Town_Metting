@@ -12,7 +12,6 @@
         <a class="nav-link" href="/event" id="nav-link-padding">Événement <i class="fa-regular fa-calendar-days"></i></a>
       </li>
       <li class="nav-item">
-        {{!-- you can able this when the user is an admin  --}}
         <a class="nav-link" href="/help">Aide villageoi <i class="fa-solid fa-circle-info"></i></a>
       </li>
       <li class="nav-item">
@@ -25,18 +24,22 @@
     <button class="btn btn-outline-success my-2 my-sm-0 fa-beat-fade" id="search" type="submit">Recherche</button>
   </form>
 </nav>
+{{!-- call the addFamilyOverlay partial --}}
 {{> addFamilyOverlay}}
 <div class="main-homepage-div" id="main">
     <button class="add-model btn btn-primary">Ajouter Une famille</button>
   {{!-- displya all the family data  --}}
   <div class="row main-row">
+    {{!-- loop thru the family data and display it --}}
     {{#each familyData as |data|}}
     <div class="col-sm col-lg-4 col-md-2 family_boxes">
+      {{!-- display the family-info partial  --}}
       {{> family-info data }}
     </div>
     {{/each}}
   </div>
 </div>
+
 
 <script src="/javascript/familyEditOrDelete.js" defer></script>
 <script src="/javascript/add-family.js" defer></script>

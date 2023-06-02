@@ -1,18 +1,22 @@
 const express = require('express');
+// Call the connection to the database using sequelize 
 const sequelize = require('./config/connection')
+// require the path package, to be able to use it when we want to access outside paths from html. like css and js files
 const path = require('path')
+// Require the controllers to be able to get the data from the api's
 const routes = require ('./controllers')
-
-
+ 
+// Require express package to build the express server
 const app = express();
+// Set up a port
 const PORT = process.env.PORT || 3001;
 
 // middlewares
-app.use(express.json())
+app.use(express.json()) // this is to get the data as json format
 app.use(express.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); 
 
-// setup handlebars later 
+
 // set up Handlebars.js as your app's template engine
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
@@ -24,6 +28,7 @@ app.set('view engine', 'handlebars');
 // set code to use express-session and sequelize.store
 // This code sets up an Express.js session and connects the session to our Sequelize database
 const session = require('express-session');
+const { log } = require('console');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 

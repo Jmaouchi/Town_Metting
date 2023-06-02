@@ -2,7 +2,6 @@ const member = document.querySelector('.add-member');
 const showMemberBox = document.querySelector('.show-add-member-box');
 
 
-
 async function addMember(event){
   event.preventDefault()
   const code = document.querySelector('.code').value.trim();

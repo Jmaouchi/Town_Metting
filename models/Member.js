@@ -35,7 +35,7 @@ Member.init(
         key: 'id'
       },
       // this should be here, and if we delete a family, then all its memeber should be deleted 
-      onDelete: 'CASCADE'
+      // onDelete: 'CASCADE'
     }
   },
   {

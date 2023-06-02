@@ -1,12 +1,19 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
+// require sequelize package
+// const sequelize = require('sequelize');
+const sequelize = require('../../config/connection');
+const {QueryTypes} = require ('sequelize')
 
 
 // send all the data using this api endpoint, and exclude the password from the response
 router.get('/', (req, res) => {
   User.findAll({
     // exclude password
+    // where: {
+    //   replacements: {email : '%yahoo.com'}
+    // },
     attributes: { exclude: ['password'] }
   })
   // then send the data to the user as json
@@ -16,6 +23,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 // post data to create a new user or signup
 router.post('/', (req, res) => {
