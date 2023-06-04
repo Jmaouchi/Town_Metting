@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { log, error } = require('console');
 
 // create our User model
 class User extends Model {
@@ -56,6 +57,17 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+    // add a validation to the table, where a user cannot have a username is the same as the email 
+    validate: {
+      usernamePassMatch(){
+        if (this.username === this.email){
+          // throw an error if the validation fails, and stop the process
+          throw error('password cannot be your username!')
+        }else{
+          console.log('yes you got this ');
+        }
+      } 
+    },
     modelName: 'user'
   }
 );

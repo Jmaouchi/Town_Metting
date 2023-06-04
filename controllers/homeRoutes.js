@@ -31,6 +31,28 @@ router.get('/', withAuth,(req,res) => {
 });
 
 
+// 
+// get the count
+router.get('/sum', (req, res) => {
+  Families.findAll({
+    attributes: [
+      ['id', 'familyName'],
+      [sequelize.fn('COUNT', sequelize.col('id')), 'num_families']
+    ]
+  }).then(dbSumFamilyData => {
+    const familyDataSum = dbSumFamilyData.map(data => data.get({plain: true}));
+    res.render('', {
+      familyDataSum
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
+
+
 // GET a single family by id
 router.get('/family/:id', withAuth, (req, res) => { 
   Families.findOne({

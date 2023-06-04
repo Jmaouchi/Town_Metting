@@ -4,6 +4,7 @@ const {Op } = require('sequelize');
 const {User, Families, Member} = require("../../models");
 const {authPage, auCourse} = require('../../middlewares/middlewares');
 const sequelize = require('../../config/connection');
+const { log } = require('console');
 
 
 // GET all data from Families table
@@ -13,7 +14,6 @@ router.get('/', (req,res) => {
     order: [[
       'familyName', 'ASC'
     ]],
-
 
     /* this will search for this or this, like here, we will search for family name = maouchi or id = 1
     where:{
@@ -70,8 +70,8 @@ router.get('/', (req,res) => {
 
     /* this will get the greatest or the lowest id inside the families table
       return Families.max("id")
-    return Families.min("id")
-    return Families.sum("id", {where : {id: 3 }}) for the summary of all id's where id = 3
+      return Families.min("id")
+      return Families.sum("id", {where : {id: 3 }}) for the summary of all id's where id = 3
     */
 
   })
@@ -87,6 +87,27 @@ router.get('/', (req,res) => {
     res.status(500).json(err);
   });
 });
+
+
+// get the count
+router.get('/sum', (req, res) => {
+  Families.findAll({
+    attributes: [
+      ['id', 'familyName'],
+      [sequelize.fn('COUNT', sequelize.col('id')), 'num_families']
+    ]
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 
 // GET a single family by id
