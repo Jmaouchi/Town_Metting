@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const {User, Families, Member, Commity, TownEvents, Help} = require('../models')
+const {User, Families, Member, Commity, TownEvents, Help} = require('../models');
+const { log } = require('console');
 
 
 // GET all Families data
@@ -29,28 +30,6 @@ router.get('/', withAuth,(req,res) => {
     res.status(500).json(err);
   });
 });
-
-
-// 
-// get the count
-router.get('/sum', (req, res) => {
-  Families.findAll({
-    attributes: [
-      ['id', 'familyName'],
-      [sequelize.fn('COUNT', sequelize.col('id')), 'num_families']
-    ]
-  }).then(dbSumFamilyData => {
-    const familyDataSum = dbSumFamilyData.map(data => data.get({plain: true}));
-    res.render('', {
-      familyDataSum
-    })
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
 
 
 // GET a single family by id

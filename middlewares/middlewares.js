@@ -11,10 +11,4 @@ const authPage = (permissions) => {
 }
 
 
-
-
-const auCourse = () => {
-
-}
-
-module.exports = { authPage, auCourse};
+module.exports = { authPage};
